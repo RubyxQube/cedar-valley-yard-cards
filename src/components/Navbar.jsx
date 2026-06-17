@@ -18,7 +18,7 @@ export default function Navbar() {
   return (
     <nav className={open ? 'nav-open' : ''} id="mainNav">
       <Link to="/" className="nav-logo" onClick={close}>
-        <img src="/logo.png" alt={siteConfig.businessName} height="44" loading="eager" />
+        <img src="/logo.png" alt={siteConfig.businessName} height="64" loading="eager" />
       </Link>
 
       <button
