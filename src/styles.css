@@ -139,9 +139,7 @@ nav {
   left: 0; right: 0;
   z-index: 900;
   height: 80px;
-  background: rgba(4, 20, 26, 0.92);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: var(--hero-bg);
   border-bottom: 1px solid var(--w8);
   display: flex;
   align-items: center;
