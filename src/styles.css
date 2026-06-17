@@ -528,6 +528,7 @@ nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rota
 
 @media (max-width: 719px) {
   .origin-row { grid-template-columns: 1fr; gap: 40px; }
+  .origin-img { max-width: 320px; margin: 0 auto; }
   .values-grid { grid-template-columns: 1fr; gap: 32px; }
   .stats-grid { grid-template-columns: 1fr; gap: 36px; }
   .photos-grid { grid-template-columns: 1fr; gap: 12px; }
