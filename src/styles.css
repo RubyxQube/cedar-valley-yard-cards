@@ -868,8 +868,21 @@ nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rota
 }
 .chat-header-info {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  align-items: center;
+  gap: 10px;
+}
+.chat-header-logo-wrap {
+  background: #fff;
+  border-radius: 8px;
+  padding: 3px 6px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.chat-header-logo {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
 }
 .chat-header-name {
   font-family: 'Mulish', sans-serif;
@@ -877,11 +890,6 @@ nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rota
   font-weight: 800;
   color: #fff;
   letter-spacing: 0.01em;
-}
-.chat-header-status {
-  font-family: 'Mulish', sans-serif;
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.72);
 }
 .chat-close {
   background: none;
