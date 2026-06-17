@@ -344,6 +344,10 @@ nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rota
   font-weight: 700; color: #fff; margin-bottom: 16px;
 }
 .cta-interrupt p { font-size: 18px; color: rgba(255,255,255,0.85); margin-bottom: 36px; max-width: 520px; margin-left: auto; margin-right: auto; }
+@media (max-width: 719px) {
+  .cta-interrupt { padding: 56px 7vw; }
+  .cta-interrupt .btn-white { width: 100%; justify-content: center; }
+}
 
 /* ─── Inner Page Hero (Occasions, Gallery, Ideas) ────────────────────────── */
 .inner-page-hero {
