@@ -29,6 +29,9 @@ const ITEMS = [
   { src: '/images/gallery/other-20yrs-richard.webp',                   alt: 'Congrats 20 Years Richard milestone yard card',            label: 'Milestone — Eagle Mountain',           cat: 'other',        w: 900, h: 600 },
   { src: '/images/gallery/school-eagle-valley-elementary.webp',        alt: 'Welcome Back Eagles yard card at Eagle Valley Elementary', label: 'School Event — Eagle Mountain',        cat: 'other',        w: 900, h: 600 },
   { src: '/images/gallery/school-teacher-appreciation.webp',           alt: 'Thank You 116 Years teacher appreciation yard card',       label: 'Teacher Appreciation — Eagle Mountain',cat: 'other',        w: 900, h: 600 },
+  { src: '/images/gallery/other-good-luck-aviettes.webp',              alt: 'Good Luck Aviettes dance team yard card display',          label: 'Good Luck Aviettes — Eagle Mountain',  cat: 'other',        w: 900, h: 600 },
+  { src: '/images/gallery/other-you-are-loved-finn.webp',              alt: 'You Are Loved Finn yard card display',                     label: 'You Are Loved — Eagle Mountain',       cat: 'other',        w: 900, h: 600 },
+  { src: '/images/gallery/birthday-robyn-jo-beach.webp',               alt: 'Happy Birthday Robyn Jo tropical beach theme yard card',   label: 'Birthday Beach — Eagle Mountain',      cat: 'birthdays',    w: 900, h: 600 },
 ];
 
 const FILTERS = [
