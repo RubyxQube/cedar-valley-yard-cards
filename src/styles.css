@@ -139,8 +139,8 @@ nav {
   left: 0; right: 0;
   z-index: 900;
   height: 80px;
-  background: var(--hero-bg);
-  border-bottom: 1px solid var(--w8);
+  background: #000d12;
+  border-bottom: 2px solid rgba(10, 147, 150, 0.4);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -201,7 +201,7 @@ nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rota
   nav.nav-open .nav-links {
     display: flex; flex-direction: column; gap: 0;
     position: absolute; top: 80px; left: 0; right: 0; z-index: 10;
-    background: rgba(4, 20, 26, 0.97);
+    background: #000d12;
     backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--w15);
     padding: 0; align-items: stretch;
@@ -352,7 +352,7 @@ nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rota
 .home-hero {
   height: 100vh; min-height: 600px;
   display: flex; flex-direction: column; justify-content: flex-end;
-  background: radial-gradient(ellipse at 25% 65%, #083040 0%, #04141a 45%, #020d12 100%);
+  background: radial-gradient(ellipse at 30% 40%, #0d5c70 0%, #083040 35%, #04141a 65%, #020d12 100%);
 }
 .hero-img-wrap { position: absolute; inset: 0; z-index: 1; }
 .hero-img-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
