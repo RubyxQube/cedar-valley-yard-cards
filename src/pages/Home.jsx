@@ -85,9 +85,9 @@ export default function Home() {
       <section className="page-hero home-hero" style={{ position: 'relative' }}>
         <div className="hero-img-wrap">
           <img
-            src="/images/gallery/missionary-farewell-sister-rose.webp"
+            src="/images/hero-home.webp"
             alt="Colorful oversized yard card display set up in an Eagle Mountain residential yard"
-            width="1400" height="800" loading="eager" fetchPriority="high"
+            width="1448" height="1086" loading="lazy"
           />
           <div className="hero-img-overlay" />
         </div>
