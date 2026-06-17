@@ -8,7 +8,13 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="footer-inner">
         <div className="footer-brand">
-          <img src="/logo.png" alt={businessName} className="footer-brand-logo" loading="lazy" />
+          <div className="footer-brand-lockup">
+            <img src="/logo-nav.png" alt={businessName} className="footer-brand-logo" loading="lazy" />
+            <div className="footer-brand-name">
+              <span className="footer-brand-name-top">Cedar Valley</span>
+              <span className="footer-brand-name-bottom">Yard Cards</span>
+            </div>
+          </div>
           <p>Eagle Mountain's Yard Card Specialists. Full-service setup and teardown - you take all the credit.</p>
           <a href={phoneHref} className="footer-phone">{phone}</a>
           <Link to="/booking" className="btn" style={{ fontSize: '13px', padding: '10px 20px', display: 'inline-block' }}>Book Your Date</Link>
