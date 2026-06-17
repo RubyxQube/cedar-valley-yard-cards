@@ -425,7 +425,10 @@ nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rota
 .reviews-inner { max-width: 760px; margin: 0 auto; }
 .reviews-label { text-align: center; margin-bottom: 12px; }
 .reviews-title { text-align: center; font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 700; color: #fff; margin-bottom: 48px; }
-.reviews-carousel-wrap { display: grid; min-height: 220px; }
+.reviews-carousel-row { display: flex; align-items: center; gap: 16px; }
+.review-arrow { flex-shrink: 0; background: none; border: 1px solid rgba(255,255,255,0.15); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.5); cursor: pointer; transition: border-color 0.2s, color 0.2s; }
+.review-arrow:hover { border-color: var(--teal-lt); color: var(--teal-lt); }
+.reviews-carousel-wrap { display: grid; flex: 1; min-height: 220px; cursor: pointer; }
 .review-slide { grid-area: 1 / 1; opacity: 0; transition: opacity 0.6s ease; pointer-events: none; visibility: hidden; text-align: center; }
 .review-slide.active { opacity: 1; pointer-events: auto; visibility: visible; }
 .review-stars { display: flex; justify-content: center; gap: 4px; margin-bottom: 20px; }

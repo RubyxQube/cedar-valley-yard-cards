@@ -67,6 +67,18 @@ export default function Home() {
     startAuto();
   }
 
+  function handleNext() {
+    clearInterval(timerRef.current);
+    setCurrent(c => (c + 1) % REVIEWS.length);
+    startAuto();
+  }
+
+  function handlePrev() {
+    clearInterval(timerRef.current);
+    setCurrent(c => (c - 1 + REVIEWS.length) % REVIEWS.length);
+    startAuto();
+  }
+
   const OccasionIcon = ({ children }) => (
     <div className="occasion-icon">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -213,16 +225,24 @@ export default function Home() {
         <div className="reviews-inner">
           <p className="eyebrow reviews-label" style={{ color: 'var(--teal-lt)' }}>What Families Say</p>
           <h2 className="reviews-title">Our Neighbors Love It</h2>
-          <div className="reviews-carousel-wrap" aria-live="polite" aria-atomic="true">
-            {REVIEWS.map((r, i) => (
-              <div key={i} className={`review-slide ${i === current ? 'active' : ''}`} aria-hidden={i !== current}>
-                <StarRow />
-                <p className="review-quote">"{r.quote}"</p>
-                <p className="review-name">{r.name}</p>
-                <p className="review-location">{r.location}</p>
-                <div className="review-platform"><GoogleIcon /> Google Review</div>
-              </div>
-            ))}
+          <div className="reviews-carousel-row">
+            <button className="review-arrow" onClick={handlePrev} aria-label="Previous review">
+              <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></svg>
+            </button>
+            <div className="reviews-carousel-wrap" onClick={handleNext} aria-live="polite" aria-atomic="true" title="Click for next review">
+              {REVIEWS.map((r, i) => (
+                <div key={i} className={`review-slide ${i === current ? 'active' : ''}`} aria-hidden={i !== current}>
+                  <StarRow />
+                  <p className="review-quote">"{r.quote}"</p>
+                  <p className="review-name">{r.name}</p>
+                  <p className="review-location">{r.location}</p>
+                  <div className="review-platform"><GoogleIcon /> Google Review</div>
+                </div>
+              ))}
+            </div>
+            <button className="review-arrow" onClick={handleNext} aria-label="Next review">
+              <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg>
+            </button>
           </div>
           <div className="review-dots">
             {REVIEWS.map((_, i) => (
