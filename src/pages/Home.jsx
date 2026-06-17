@@ -87,7 +87,7 @@ export default function Home() {
           <img
             src="/images/hero-home.webp"
             alt="Colorful oversized yard card display set up in an Eagle Mountain residential yard"
-            width="1448" height="1086" loading="lazy"
+            width="1448" height="1086" loading="eager"
           />
           <div className="hero-img-overlay" />
         </div>
@@ -213,9 +213,9 @@ export default function Home() {
         <div className="reviews-inner">
           <p className="eyebrow reviews-label" style={{ color: 'var(--teal-lt)' }}>What Families Say</p>
           <h2 className="reviews-title">Our Neighbors Love It</h2>
-          <div className="reviews-carousel-wrap">
+          <div className="reviews-carousel-wrap" aria-live="polite" aria-atomic="true">
             {REVIEWS.map((r, i) => (
-              <div key={i} className={`review-slide ${i === current ? 'active' : ''}`}>
+              <div key={i} className={`review-slide ${i === current ? 'active' : ''}`} aria-hidden={i !== current}>
                 <StarRow />
                 <p className="review-quote">"{r.quote}"</p>
                 <p className="review-name">{r.name}</p>

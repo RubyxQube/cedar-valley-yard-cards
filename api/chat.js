@@ -1,115 +1,103 @@
-export const config = { runtime: 'nodejs' };
+const SYSTEM_PROMPT = `You are the AI assistant for Cedar Valley Yard Cards, a yard card rental business in Eagle Mountain, Utah. Help customers with questions, pricing, and booking.
 
-const CAPTURE_LEAD_TOOL = {
-  name: 'capture_lead',
-  description: "Call this tool exactly once when you have collected the visitor's name, a way to contact them (phone or email), and what they are celebrating or need help with. Do not call it before all three are known.",
-  input_schema: {
-    type: 'object',
-    properties: {
-      name: { type: 'string', description: "The visitor's full name or first name as given." },
-      contact: { type: 'string', description: 'Phone number or email address the visitor provided.' },
-      occasion: { type: 'string', description: 'What they are celebrating or what they need (e.g. "Birthday for my son turning 10", "Graduation for Emma").' },
-    },
-    required: ['name', 'contact', 'occasion'],
-  },
-};
-
-const DEFAULT_SYSTEM_PROMPT = `You are the friendly chat assistant for Cedar Valley Yard Cards, a yard card rental business in Eagle Mountain, Utah.
-
-Your job is to answer visitor questions, help them figure out what they need, and capture their contact info so the team can follow up.
-
-ABOUT THE BUSINESS:
-- Business: Cedar Valley Yard Cards
+BUSINESS INFO:
+- Service: Full-service yard card rental — delivery, setup, all-day display, and teardown included
+- Price: $80 flat rate for Eagle Mountain & Saratoga Springs. Lehi, Herriman, and surrounding areas have a travel fee.
+- Rush fee: +$25 for bookings less than 48 hours out
+- Cancellation fee: $25 within 48 hours of scheduled setup
+- Occasions: Birthdays, graduations, missionary returns/farewells, welcome homes, new babies, retirements, anniversaries, and more
+- Setup time: Early morning (5am–7am) so the display is waiting when they wake up
+- Rental period: One day (setup in the morning, pickup in the evening). Longer available — ask when booking.
+- Booking: Fill out the form on the website; confirmed within 24 hours
 - Phone: (801) 598-9197
-- Location: Eagle Mountain, Utah
-- Service area: Eagle Mountain, Saratoga Springs, Lehi, and Herriman
+- Service area: Eagle Mountain, Saratoga Springs, Lehi, Herriman
 
-PRICING:
-- Base price: $80 flat rate (includes delivery, setup, and teardown)
-- Rush fee: +$25 for bookings with less than 48 hours notice
-- Cancellation fee: $25 if cancelled within 48 hours of scheduled setup
-- Damage fee: $25 per damaged piece
-- Out-of-area: varies — they should call or fill out the booking form for a quote
+LEAD CAPTURE: Collect the customer's name, contact info (phone or email), and what they need (occasion and/or date) through natural conversation — never ask for all three at once. Once you have all three, call the capture_lead tool.
 
-HOW IT WORKS:
-- Signs are delivered and set up between 5am and 7am on the celebration day
-- Teardown happens the same evening — it's a one-day rental
-- Signs are weather-resistant; severe weather means a free reschedule
-- Customers can customize the name, age, colors, and message
-
-OCCASIONS WE SERVE:
-- Birthdays (all ages — milestone birthdays especially welcome)
-- Graduations (high school and college)
-- Missionary farewells and homecomings
-- Welcome homes
-- Retirements
-- New baby arrivals
-- Anniversaries
-
-BOOKING:
-- Recommended lead time is 2–4 weeks
-- May and June book up fast — encourage early booking for spring graduates
-- To book: visit the Booking page at /booking on the site, or call (801) 598-9197
-
-LEAD CAPTURE INSTRUCTIONS:
-Collect the visitor's name, a way to contact them (phone or email), and what they need — but never ask for all three at once. Gather these naturally through conversation. Once you have all three, call the capture_lead tool immediately. Only call it once.
-
-If someone asks about pricing, availability, or wants to get started, guide them toward leaving their info or visiting /booking.
-
-Never make up details about inventory, availability, or anything not listed here. If you don't know, say "I want to make sure I get that right for you — give us a call at (801) 598-9197."
+TONE: Friendly, warm, direct. Like a neighbor who does this for a living. Never pushy or salesy. Answer questions first, then offer help. Never make up prices or details not listed above.
 
 FORMATTING RULES — this is a chat widget:
-- You can use **bold** for emphasis and *italics* sparingly — they will render correctly.
+- Use **bold** for emphasis and *italics* sparingly — they render correctly.
 - For lists, write each item on its own line starting with "- "
 - Separate topics with a blank line.
 - No hashtag headers (##). No horizontal rules (---). No backticks.
-- Keep responses concise — this is a small chat bubble, not a document.
+- Keep responses concise — this is a small chat bubble, not a document.`;
 
-TONE:
-- Friendly, direct, confident. Never salesy or pushy.
-- Answer the question first, then offer help.
-- Keep responses short — 2–3 sentences unless detail is genuinely needed.
-- This is a neighbor-helping-neighbor business. Sound like it.`;
-
-async function fireAlerts(name, contact, occasion) {
-  const topic = process.env.NTFY_TOPIC;
-  const resendKey = process.env.RESEND_API_KEY;
-  const alertEmail = process.env.ALERT_EMAIL;
-
-  await Promise.allSettled([
-    topic && fetch(`https://ntfy.sh/${topic}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'text/plain' },
-      body: `New lead from Cedar Valley Yard Cards chat\n\nName: ${name}\nContact: ${contact}\nOccasion: ${occasion}`,
-    }),
-    resendKey && alertEmail && fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${resendKey}`,
-        'Content-Type': 'application/json',
+const TOOLS = [
+  {
+    name: 'capture_lead',
+    description: 'Call this once you have collected the customer name, contact info (phone or email), and what they need. Sends an alert to the business owner.',
+    input_schema: {
+      type: 'object',
+      properties: {
+        name:    { type: 'string', description: 'Customer name' },
+        contact: { type: 'string', description: 'Phone number or email address' },
+        details: { type: 'string', description: 'What they need — occasion, date, honoree name, any other details' },
+        reply:   { type: 'string', description: 'Your confirmation message to the customer' },
       },
-      body: JSON.stringify({
-        from: 'Cedar Valley Yard Cards <onboarding@resend.dev>',
-        to: [alertEmail],
-        subject: `New Chat Lead: ${name}`,
-        html: `<p><strong>Name:</strong> ${name}</p><p><strong>Contact:</strong> ${contact}</p><p><strong>Occasion:</strong> ${occasion}</p>`,
-      }),
-    }),
-  ]);
+      required: ['name', 'contact', 'details', 'reply'],
+    },
+  },
+];
+
+async function sendAlerts({ name, contact, details }) {
+  const msg = `New lead from Cedar Valley Yard Cards chat!\n\nName: ${name}\nContact: ${contact}\nDetails: ${details}`;
+  const tasks = [];
+
+  if (process.env.NTFY_TOPIC) {
+    tasks.push(
+      fetch(`https://ntfy.sh/${process.env.NTFY_TOPIC}`, {
+        method: 'POST',
+        body: msg,
+        headers: { Title: 'CVYC Chat Lead', Priority: 'high' },
+      }).catch(() => {})
+    );
+  }
+
+  if (process.env.TEXTBELT_KEY && process.env.ALERT_PHONE_NUMBER) {
+    tasks.push(
+      fetch('https://textbelt.com/text', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          phone: process.env.ALERT_PHONE_NUMBER,
+          message: msg.slice(0, 160),
+          key: process.env.TEXTBELT_KEY,
+        }),
+      }).catch(() => {})
+    );
+  }
+
+  if (process.env.RESEND_API_KEY && process.env.ALERT_EMAIL) {
+    tasks.push(
+      fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+        },
+        body: JSON.stringify({
+          from: 'Cedar Valley Yard Cards <noreply@cedarvalleyyardcards.com>',
+          to: process.env.ALERT_EMAIL,
+          subject: 'New Chat Lead — Cedar Valley Yard Cards',
+          text: msg,
+        }),
+      }).catch(() => {})
+    );
+  }
+
+  await Promise.allSettled(tasks);
 }
 
 export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
-  }
+  if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  const { messages } = req.body || {};
-  if (!Array.isArray(messages) || messages.length === 0) {
-    return res.status(400).json({ error: 'messages array is required' });
-  }
+  const { messages } = req.body;
+  if (!Array.isArray(messages)) return res.status(400).json({ error: 'Invalid request' });
 
+  let apiRes;
   try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
+    apiRes = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
         'x-api-key': process.env.ANTHROPIC_API_KEY,
@@ -119,37 +107,32 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         model: 'claude-haiku-4-5-20251001',
         max_tokens: 1024,
-        system: DEFAULT_SYSTEM_PROMPT,
-        tools: [CAPTURE_LEAD_TOOL],
+        system: SYSTEM_PROMPT,
+        tools: TOOLS,
         messages,
       }),
     });
-
-    if (!response.ok) {
-      const err = await response.text();
-      console.error('Anthropic API error:', err);
-      return res.status(500).json({ error: 'Something went wrong. Please call us at (801) 598-9197.' });
-    }
-
-    const data = await response.json();
-
-    if (data.stop_reason === 'tool_use') {
-      const toolBlock = data.content.find(b => b.type === 'tool_use' && b.name === 'capture_lead');
-      if (toolBlock) {
-        const { name, contact, occasion } = toolBlock.input;
-        await fireAlerts(name, contact, occasion);
-        return res.status(200).json({
-          type: 'lead_captured',
-          reply: `Thanks so much, ${name}! I've passed your info along and someone will reach out soon to confirm your date. In the meantime, feel free to call us at (801) 598-9197 if you'd like to talk right away.`,
-        });
-      }
-    }
-
-    const textBlock = data.content.find(b => b.type === 'text');
-    return res.status(200).json({ type: 'message', reply: textBlock?.text || '' });
-
   } catch (err) {
-    console.error('Chat handler error:', err);
+    console.error('[chat] network error', err);
     return res.status(500).json({ error: 'Something went wrong. Please call us at (801) 598-9197.' });
   }
+
+  if (!apiRes.ok) {
+    const errBody = await apiRes.text().catch(() => '');
+    console.error('[chat] Anthropic error', apiRes.status, errBody);
+    return res.status(500).json({ error: 'Something went wrong. Please call us at (801) 598-9197.' });
+  }
+
+  const data = await apiRes.json();
+
+  const toolUse = data.content?.find(b => b.type === 'tool_use' && b.name === 'capture_lead');
+  if (toolUse) {
+    const { name, contact, details, reply } = toolUse.input;
+    await sendAlerts({ name, contact, details });
+    return res.status(200).json({ type: 'lead_captured', reply });
+  }
+
+  const textBlock = data.content?.find(b => b.type === 'text');
+  const reply = textBlock?.text || "Sorry, I didn't catch that. Give us a call at (801) 598-9197.";
+  return res.status(200).json({ type: 'message', reply });
 }

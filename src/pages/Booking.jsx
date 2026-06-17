@@ -52,6 +52,11 @@ export default function Booking() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    if (!form.agreeContact) {
+      setStatus('error');
+      setErrorMsg('Please check the box agreeing to be contacted before submitting.');
+      return;
+    }
     setStatus('sending');
     setErrorMsg('');
     try {

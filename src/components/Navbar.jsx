@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import siteConfig from '../siteConfig';
 
@@ -13,6 +13,7 @@ const links = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
+  const navRef = useRef(null);
 
   function close() { setOpen(false); }
 
@@ -22,8 +23,21 @@ export default function Navbar() {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
+  useEffect(() => {
+    if (!open) return;
+    function onOutside(e) {
+      if (navRef.current && !navRef.current.contains(e.target)) setOpen(false);
+    }
+    document.addEventListener('mousedown', onOutside);
+    document.addEventListener('touchstart', onOutside, { passive: true });
+    return () => {
+      document.removeEventListener('mousedown', onOutside);
+      document.removeEventListener('touchstart', onOutside);
+    };
+  }, [open]);
+
   return (
-    <nav className={open ? 'nav-open' : ''} id="mainNav">
+    <nav className={open ? 'nav-open' : ''} id="mainNav" ref={navRef}>
       <Link to="/" className="nav-logo" onClick={close}>
         <img src="/logo-nav.png" alt={siteConfig.businessName} height="48" loading="eager" />
         <div className="nav-logo-text">
