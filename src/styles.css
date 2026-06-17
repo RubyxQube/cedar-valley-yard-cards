@@ -866,24 +866,6 @@ nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rota
   gap: 12px;
   flex-shrink: 0;
 }
-.chat-header-info {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.chat-header-logo-wrap {
-  background: #fff;
-  border-radius: 8px;
-  padding: 3px 6px;
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-}
-.chat-header-logo {
-  height: 28px;
-  width: auto;
-  object-fit: contain;
-}
 .chat-header-name {
   font-family: 'Mulish', sans-serif;
   font-size: 14px;

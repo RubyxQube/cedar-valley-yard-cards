@@ -146,12 +146,7 @@ export default function ChatWidget() {
       {open && (
         <div className="chat-panel" role="dialog" aria-label={`Chat with ${chatConfig.businessName}`}>
           <div className="chat-header">
-            <div className="chat-header-info">
-              <div className="chat-header-logo-wrap">
-                <img src="/logo-nav.png" alt={chatConfig.businessName} className="chat-header-logo" />
-              </div>
-              <span className="chat-header-name">{chatConfig.businessName}</span>
-            </div>
+            <span className="chat-header-name">{chatConfig.businessName}</span>
             <button className="chat-close" onClick={() => setOpen(false)} aria-label="Close chat">✕</button>
           </div>
 
