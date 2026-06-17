@@ -467,7 +467,7 @@ nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rota
 /* ABOUT PAGE                                                                  */
 /* ═══════════════════════════════════════════════════════════════════════════ */
 
-.about-hero { height: 100vh; min-height: 600px; position: relative; overflow: hidden; background: var(--hero-bg); display: flex; align-items: center; justify-content: center; }
+.about-hero { height: 50vh; min-height: 360px; position: relative; overflow: hidden; background: var(--hero-bg); display: flex; align-items: center; justify-content: center; }
 .about-hero-content { position: relative; z-index: 10; text-align: center; padding: 0 5vw; max-width: 900px; }
 .about-hero-content h1 { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: clamp(40px, 6vw, 72px); color: #fff; line-height: 1.15; }
 
