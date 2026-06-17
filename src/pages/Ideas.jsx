@@ -72,7 +72,7 @@ export default function Ideas() {
             <p>A heads-up to the immediate neighbors prevents accidental spoilers. Just the neighbor who's likely to see our truck pull up and post something on the neighborhood Facebook group before your person even wakes up.</p>
             <h3>Let us handle the rest</h3>
             <p>Once we have your date, address, occasion details, and any color or message preferences, our job is to make you look like the most thoughtful person in their life. You don't need to coordinate the setup or stress about teardown. That's all on us.</p>
-            <p>Ready to plan yours? <Link to="/booking" style={{ color: 'var(--rose)', fontWeight: '700' }}>Book your date here</Link> and we'll confirm within 24 hours.</p>
+            <p>Ready to plan yours? <Link to="/booking" style={{ color: 'var(--teal)', fontWeight: '700' }}>Book your date here</Link> and we'll confirm within 24 hours.</p>
           </div>
         </div>
 
@@ -88,7 +88,7 @@ export default function Ideas() {
             <p>The most popular graduation displays include the graduate's first name, their graduation year, and their school. If you have school colors, we'll match them. Some families add a quote or a single word - totally up to you.</p>
             <h3>Make it last all day</h3>
             <p>Most families choose to keep the display up for the day of graduation and one or two days after. Relatives, friends, and neighbors will stop by - it extends the celebration past just the ceremony.</p>
-            <p>For Eagle Mountain seniors graduating in May or June, now is the right time. <Link to="/booking?occasion=graduation" style={{ color: 'var(--rose)', fontWeight: '700' }}>Book a graduation display</Link> and let's make it one they remember.</p>
+            <p>For Eagle Mountain seniors graduating in May or June, now is the right time. <Link to="/booking?occasion=graduation" style={{ color: 'var(--teal)', fontWeight: '700' }}>Book a graduation display</Link> and let's make it one they remember.</p>
           </div>
         </div>
 
@@ -106,7 +106,7 @@ export default function Ideas() {
             <p>A sister returning from 18 months of service put in the same dedication, the same sacrifice, the same love for the people she served. The display should reflect that.</p>
             <h3>Military and study abroad homecomings</h3>
             <p>Military homecomings and returns from study abroad programs deserve exactly the same treatment. The emotion of that moment is the same regardless of where they were.</p>
-            <p><Link to="/booking?occasion=welcome-home" style={{ color: 'var(--rose)', fontWeight: '700' }}>Book a welcome home display</Link> and let's make the first thing they see when they pull into the neighborhood be something they'll never forget.</p>
+            <p><Link to="/booking?occasion=welcome-home" style={{ color: 'var(--teal)', fontWeight: '700' }}>Book a welcome home display</Link> and let's make the first thing they see when they pull into the neighborhood be something they'll never forget.</p>
           </div>
         </div>
 
@@ -128,7 +128,7 @@ export default function Ideas() {
               <li>Keep the message short and specific to who they are</li>
               <li>Consider keeping the display up for 2-3 days so everyone can see it</li>
             </ul>
-            <p><Link to="/booking?occasion=birthday" style={{ color: 'var(--rose)', fontWeight: '700' }}>Book a birthday display</Link> today.</p>
+            <p><Link to="/booking?occasion=birthday" style={{ color: 'var(--teal)', fontWeight: '700' }}>Book a birthday display</Link> today.</p>
           </div>
         </div>
 

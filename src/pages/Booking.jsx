@@ -73,7 +73,7 @@ export default function Booking() {
       <div className="booking-success">
         <SparklesCanvas density={180} />
         <div className="booking-success-content">
-          <svg width="64" height="64" fill="none" stroke="var(--rose)" strokeWidth="2" viewBox="0 0 24 24">
+          <svg width="64" height="64" fill="none" stroke="var(--teal)" strokeWidth="2" viewBox="0 0 24 24">
             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
             <polyline points="22 4 12 14.01 9 11.01" />
           </svg>

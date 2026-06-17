@@ -211,7 +211,7 @@ export default function Home() {
       {/* ── Reviews ── */}
       <section className="reviews-section">
         <div className="reviews-inner">
-          <p className="eyebrow reviews-label" style={{ color: 'var(--rose-lt)' }}>What Families Say</p>
+          <p className="eyebrow reviews-label" style={{ color: 'var(--teal-lt)' }}>What Families Say</p>
           <h2 className="reviews-title">Our Neighbors Love It</h2>
           <div className="reviews-carousel-wrap">
             {REVIEWS.map((r, i) => (
@@ -233,7 +233,7 @@ export default function Home() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="cta-interrupt cta-interrupt-rose reveal">
+      <section className="cta-interrupt cta-interrupt-teal reveal">
         <h2>Ready to Make Someone's Day?</h2>
         <p>Dates fill up fast around graduation season - grab yours now.</p>
         <Link to="/booking" className="btn-white">Book Your Date</Link>
