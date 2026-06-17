@@ -95,7 +95,7 @@ export default function Gallery() {
           </div>
           <div className="gallery-masonry">
             {visible.map((item, idx) => (
-              <div key={item.src} className="gallery-item" data-cat={item.cat} onClick={() => setLb(idx)} style={{ cursor: 'zoom-in' }}>
+              <div key={item.src} className="gallery-item" data-cat={item.cat} onClick={() => setLb(idx)}>
                 <img src={item.src} alt={item.alt} width={item.w} height={item.h} loading="lazy" />
                 <div className="gallery-overlay"><span className="gallery-label">{item.label}</span></div>
               </div>
