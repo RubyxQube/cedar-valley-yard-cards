@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cedar Valley Yard Cards | Yard Card Rentals in Eagle Mountain, Utah</title>
+  <meta name="description" content="Eagle Mountain's full-service yard card rental. We set up and tear down for birthdays, graduations, welcome homes, and more. You take all the credit.">
+  <link rel="canonical" href="https://cedar-valley-yard-cards.vercel.app/">
+  <meta property="og:title" content="Cedar Valley Yard Cards | Eagle Mountain, Utah">
+  <meta property="og:description" content="Full-service yard card rentals - we set up before they wake up, you take all the credit.">
+  <meta property="og:url" content="https://cedar-valley-yard-cards.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://placehold.co/1200x630/c03a5f/ffffff?text=Cedar+Valley+Yard+Cards">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700;800&family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Cedar Valley Yard Cards",
+    "telephone": "(801) 598-9197",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Eagle Mountain",
+      "addressRegion": "UT",
+      "addressCountry": "US"
+    },
+    "areaServed": ["Eagle Mountain", "Saratoga Springs", "Lehi", "Herriman"],
+    "url": "https://cedar-valley-yard-cards.vercel.app/"
+  }
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+  <style>
+    /* ─── Hero ─────────────────────────────────────────────────────────────── */
+    .hero {
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background: radial-gradient(ellipse at 25% 65%, #3a0d1c 0%, #1e0814 45%, #0e0516 100%);
+    }
+
+    .hero-img-wrap {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+    .hero-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .hero-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(21,6,16,0.2) 0%,
+        rgba(21,6,16,0.15) 40%,
+        rgba(21,6,16,0.75) 70%,
+        rgba(21,6,16,0.92) 100%
+      );
+    }
+
+    .hero-text-block {
+      padding: 0 5vw 80px;
+      max-width: 860px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Mulish', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--rose-lt);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 800;
+      font-size: clamp(48px, 8vw, 80px);
+      color: #fff;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .hero-sub {
+      font-family: 'Mulish', sans-serif;
+      font-size: clamp(16px, 2vw, 18px);
+      color: rgba(255,255,255,0.82);
+      max-width: 520px;
+      margin-bottom: 32px;
+      line-height: 1.65;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .hero-phone-link {
+      color: rgba(255,255,255,0.65);
+      font-size: 15px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 20px;
+    }
+    .hero-phone-link svg { flex-shrink: 0; }
+
+    /* ─── Occasion Strip ────────────────────────────────────────────────────── */
+    .occasion-strip {
+      background: var(--blush);
+      padding: 48px 5vw;
+    }
+    .occasion-strip-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      gap: 12px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .occasion-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      flex: 1;
+      min-width: 80px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .occasion-item:hover { transform: translateY(-3px); }
+    .occasion-icon {
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 2px 12px rgba(192,58,95,0.12);
+    }
+    .occasion-icon svg {
+      width: 26px;
+      height: 26px;
+      color: var(--rose);
+    }
+    .occasion-label {
+      font-family: 'Mulish', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--rose-dk);
+    }
+
+    /* ─── How It Works ──────────────────────────────────────────────────────── */
+    .how-it-works {
+      padding: 96px 5vw;
+      background: var(--bg);
+    }
+    .how-it-works-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .how-eyebrow {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .how-title {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 64px;
+    }
+    .how-steps {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      position: relative;
+      flex-wrap: wrap;
+    }
+    .how-steps::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: calc(33.33% - 20px);
+      right: calc(33.33% - 20px);
+      height: 2px;
+      background: var(--border);
+    }
+    @media (max-width: 719px) {
+      .how-steps { flex-direction: column; gap: 48px; }
+      .how-steps::before { display: none; }
+    }
+    .how-step {
+      flex: 1;
+      min-width: 220px;
+      text-align: center;
+    }
+    .how-step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 72px;
+      font-weight: 800;
+      color: var(--rose);
+      line-height: 1;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .how-step h3 {
+      font-family: 'Mulish', sans-serif;
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+    .how-step p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ─── Occasion Showcase ─────────────────────────────────────────────────── */
+    .occasion-showcase {
+      padding: 0;
+    }
+    .feature-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      align-items: stretch;
+    }
+    .feature-row-img {
+      overflow: hidden;
+      min-height: 400px;
+    }
+    .feature-row-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .feature-row-text {
+      padding: clamp(40px, 6vw, 80px) clamp(32px, 5vw, 64px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .feature-row-text .eyebrow { margin-bottom: 14px; }
+    .feature-row-text h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: clamp(28px, 3.5vw, 40px);
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .feature-row-text p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+    .feature-link {
+      color: var(--rose);
+      font-weight: 700;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s;
+    }
+    .feature-link:hover { gap: 10px; }
+    .feature-row:nth-child(odd) { background: var(--bg); }
+    .feature-row:nth-child(even) { background: var(--blush); }
+    .feature-row.flip .feature-row-img { order: 2; }
+    .feature-row.flip .feature-row-text { order: 1; }
+
+    @media (max-width: 719px) {
+      .feature-row {
+        grid-template-columns: 1fr;
+      }
+      .feature-row-img { min-height: 260px; }
+      .feature-row-text { padding: 40px 24px; }
+      .feature-row.flip .feature-row-img { order: 0; }
+      .feature-row.flip .feature-row-text { order: 0; }
+    }
+
+    /* ─── Gallery Preview ───────────────────────────────────────────────────── */
+    .gallery-preview {
+      padding: 96px 5vw;
+      background: var(--bg);
+    }
+    .gallery-preview-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .gallery-preview-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .gallery-preview-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: clamp(30px, 4vw, 44px);
+      color: var(--text);
+    }
+    .gallery-preview-header a {
+      color: var(--rose);
+      font-weight: 700;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+    .gallery-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .gallery-preview-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      aspect-ratio: 4/3;
+    }
+    .gallery-preview-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .gallery-preview-item:hover img { transform: scale(1.04); }
+    .gallery-preview-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0);
+      display: flex;
+      align-items: flex-end;
+      padding: 16px;
+      transition: background 0.3s;
+    }
+    .gallery-preview-item:hover .gallery-preview-overlay {
+      background: rgba(192,58,95,0.55);
+    }
+    .gallery-preview-label {
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .gallery-preview-item:hover .gallery-preview-label { opacity: 1; }
+    @media (max-width: 719px) {
+      .gallery-preview-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .gallery-preview-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ─── Reviews ───────────────────────────────────────────────────────────── */
+    .reviews-section {
+      background: var(--hero-bg);
+      padding: 96px 5vw;
+    }
+    .reviews-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .reviews-label {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .reviews-title {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 48px;
+    }
+    .reviews-carousel-wrap {
+      display: grid;
+      min-height: 220px;
+    }
+    .review-slide {
+      grid-area: 1 / 1;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      pointer-events: none;
+      visibility: hidden;
+      text-align: center;
+    }
+    .review-slide.active {
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+    }
+    .review-stars {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      margin-bottom: 20px;
+    }
+    .review-stars svg {
+      width: 18px;
+      height: 18px;
+      fill: #fbbf24;
+    }
+    .review-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(20px, 2.5vw, 26px);
+      font-style: italic;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+    .review-name {
+      font-family: 'Mulish', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.55);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .review-location {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      margin-top: 4px;
+    }
+    .review-platform {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 12px;
+      background: var(--w8);
+      border-radius: 20px;
+      padding: 4px 10px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.45);
+    }
+    .review-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 36px;
+    }
+    .review-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--w15);
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      padding: 0;
+    }
+    .review-dot.active { background: var(--rose-lt); }
+
+    /* ─── CTA Interrupt ─────────────────────────────────────────────────────── */
+    .cta-interrupt {
+      background: var(--rose);
+      padding: 96px 5vw;
+      text-align: center;
+    }
+    .cta-interrupt h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .cta-interrupt p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 36px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .btn-white {
+      display: inline-block;
+      background: #fff;
+      color: var(--rose);
+      font-family: 'Mulish', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 32px;
+      border-radius: 6px;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .btn-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Demo Banner (homepage only) ─────────────────────────────────────── -->
+<div class="demo-banner" id="demoBanner">
+  <div class="demo-banner-left">
+    <a href="https://rubyxqube.com" target="_blank" rel="noopener">
+      <img src="logo-h-mono-white.png" alt="RubyxQube" height="20">
+    </a>
+    <span class="demo-banner-business">Cedar Valley Yard Cards</span>
+    <span class="demo-banner-badge">Sample Website</span>
+    <span class="demo-banner-desc">This is a demo site built by RubyxQube.</span>
+  </div>
+  <button class="banner-dismiss" id="bannerDismiss" aria-label="Dismiss banner">&#x2715;</button>
+</div>
+
+<!-- ── Nav ─────────────────────────────────────────────────────────────── -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Cedar Valley Yard Cards" height="44" loading="eager"></a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="occasions.html">Occasions</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="ideas.html">Ideas</a></li>
+    <li><a href="about.html">About</a></li>
+    <li class="nav-book"><a href="booking.html">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- ── Hero ────────────────────────────────────────────────────────────── -->
+<section class="page-hero hero">
+  <!-- Hero background image -->
+  <div class="hero-img-wrap">
+    <img
+      src="https://placehold.co/1400x800/3d1024/fce8ef?text=Yard+Card+Photo"
+      alt="Colorful oversized yard card display set up in an Eagle Mountain residential yard for a celebration"
+      width="1400" height="800"
+      loading="eager" fetchpriority="high"
+    >
+    <div class="hero-img-overlay"></div>
+  </div>
+  <!-- Sparkles canvas (above overlay) -->
+  <canvas id="heroCanvas" class="hero-canvas" style="z-index: 2;"></canvas>
+  <!-- Text block -->
+  <div class="hero-content hero-text-block">
+    <span class="hero-eyebrow">Eagle Mountain's Yard Card Rental</span>
+    <h1>Celebrate Someone Special</h1>
+    <p class="hero-sub">We set it up before they wake up. You take all the credit.</p>
+    <div class="hero-ctas">
+      <a href="booking.html" class="btn">Book Your Date</a>
+      <a href="gallery.html" class="btn-outline">See Our Work</a>
+    </div>
+    <div class="hero-phone-link">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.61 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <a href="tel:8015989197" style="color:inherit;">(801) 598-9197</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Occasion Strip ───────────────────────────────────────────────────── -->
+<section class="occasion-strip reveal">
+  <div class="occasion-strip-inner">
+    <a href="occasions.html#birthdays" class="occasion-item">
+      <div class="occasion-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+          <path d="M12 3v2M10 3l2 2 2-2"/>
+        </svg>
+      </div>
+      <span class="occasion-label">Birthdays</span>
+    </a>
+    <a href="occasions.html#graduations" class="occasion-item">
+      <div class="occasion-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/>
+          <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+        </svg>
+      </div>
+      <span class="occasion-label">Graduations</span>
+    </a>
+    <a href="occasions.html#welcome-home" class="occasion-item">
+      <div class="occasion-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+      </div>
+      <span class="occasion-label">Welcome Home</span>
+    </a>
+    <a href="occasions.html#new-baby" class="occasion-item">
+      <div class="occasion-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+          <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+          <line x1="9" y1="9" x2="9.01" y2="9"/>
+          <line x1="15" y1="9" x2="15.01" y2="9"/>
+        </svg>
+      </div>
+      <span class="occasion-label">New Babies</span>
+    </a>
+    <a href="occasions.html#retirement" class="occasion-item">
+      <div class="occasion-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+      </div>
+      <span class="occasion-label">Retirements</span>
+    </a>
+  </div>
+</section>
+
+<!-- ── How It Works ─────────────────────────────────────────────────────── -->
+<section class="how-it-works">
+  <div class="how-it-works-inner">
+    <p class="eyebrow how-eyebrow">The Process</p>
+    <h2 class="how-title reveal">Simple From Start to Surprise</h2>
+    <div class="how-steps">
+      <div class="how-step reveal">
+        <span class="how-step-num">1</span>
+        <h3>Pick Your Date + Occasion</h3>
+        <p>Browse our calendar and tell us who you're celebrating. We'll confirm your date and get the details from you.</p>
+      </div>
+      <div class="how-step reveal">
+        <span class="how-step-num">2</span>
+        <h3>We Arrive Before They Wake Up</h3>
+        <p>Early morning setup, full display in place, we're gone before anyone knows. No coordinating required on your end.</p>
+      </div>
+      <div class="how-step reveal">
+        <span class="how-step-num">3</span>
+        <h3>They're Surprised, We Pack Up</h3>
+        <p>Their reaction is the reward. We handle teardown so you can spend the day celebrating instead of cleaning up.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Occasion Showcase ─────────────────────────────────────────────────── -->
+<section class="occasion-showcase">
+  <!-- Row 1: Birthday — image left, text right -->
+  <div class="feature-row reveal">
+    <div class="feature-row-img">
+      <img
+        src="https://placehold.co/600x480/c03a5f/ffffff?text=Birthday+Setup"
+        alt="Oversized birthday yard card display with colorful letters spelling Happy Birthday"
+        width="600" height="480"
+        loading="lazy"
+      >
+    </div>
+    <div class="feature-row-text">
+      <span class="eyebrow">Birthdays</span>
+      <h2>The Classic. The One They'll Talk About.</h2>
+      <p>From sweet sixteens to 60th milestone birthdays, we build displays that stop traffic. Tell us who's celebrating - we handle the rest. Colors, themes, names in giant letters - all yours to customize.</p>
+      <a href="booking.html?occasion=birthday" class="feature-link">Book a Birthday <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+    </div>
+  </div>
+
+  <!-- Row 2: Graduation — text left, image right -->
+  <div class="feature-row flip reveal">
+    <div class="feature-row-img">
+      <img
+        src="https://placehold.co/600x480/9a2d4a/fce8ef?text=Graduation+Setup"
+        alt="Yard card graduation display with class year and school colors in Eagle Mountain"
+        width="600" height="480"
+        loading="lazy"
+      >
+    </div>
+    <div class="feature-row-text">
+      <span class="eyebrow">Graduations</span>
+      <h2>Grad Season is Our Favorite</h2>
+      <p>Eagle Mountain and Lehi seniors graduate in May and June - and their yards should show it. Class year, school colors, their name in giant letters. Dates fill up fast, so book early. We've never had a grad who wasn't floored by the display.</p>
+      <a href="booking.html?occasion=graduation" class="feature-link">Book a Graduation <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+    </div>
+  </div>
+
+  <!-- Row 3: Welcome Home — image left, text right -->
+  <div class="feature-row reveal">
+    <div class="feature-row-img">
+      <img
+        src="https://placehold.co/600x480/3a9ab8/ffffff?text=Welcome+Home+Setup"
+        alt="Welcome home yard card display for a missionary return in Eagle Mountain Utah"
+        width="600" height="480"
+        loading="lazy"
+      >
+    </div>
+    <div class="feature-row-text">
+      <span class="eyebrow">Welcome Home</span>
+      <h2>Because Coming Home is a Big Deal Here.</h2>
+      <p>Missionary returns, military homecomings, study abroad - the front yard is the first thing they see. We make sure it says everything you feel before they open the car door. This one hits different every single time.</p>
+      <a href="booking.html?occasion=welcome-home" class="feature-link">Book a Welcome Home <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Gallery Preview ──────────────────────────────────────────────────── -->
+<section class="gallery-preview">
+  <div class="gallery-preview-inner">
+    <div class="gallery-preview-header reveal">
+      <h2>A Few of Our Favorites</h2>
+      <a href="gallery.html">See All Our Work <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="display:inline;vertical-align:middle;margin-left:2px;"><polyline points="9 18 15 12 9 6"/></svg></a>
+    </div>
+    <div class="gallery-preview-grid">
+      <div class="gallery-preview-item reveal">
+        <img src="https://placehold.co/500x400/c03a5f/ffffff?text=Birthday+Display" alt="Birthday yard card setup in Eagle Mountain neighborhood" width="500" height="400" loading="lazy">
+        <div class="gallery-preview-overlay"><span class="gallery-preview-label">Eagle Mountain, 2025</span></div>
+      </div>
+      <div class="gallery-preview-item reveal">
+        <img src="https://placehold.co/500x400/9a2d4a/fce8ef?text=Graduation+Display" alt="Graduation yard card display with class year letters" width="500" height="400" loading="lazy">
+        <div class="gallery-preview-overlay"><span class="gallery-preview-label">Eagle Mountain, 2025</span></div>
+      </div>
+      <div class="gallery-preview-item reveal">
+        <img src="https://placehold.co/500x400/3a9ab8/ffffff?text=Welcome+Home" alt="Welcome home missionary return yard card display" width="500" height="400" loading="lazy">
+        <div class="gallery-preview-overlay"><span class="gallery-preview-label">Eagle Mountain, 2025</span></div>
+      </div>
+      <div class="gallery-preview-item reveal">
+        <img src="https://placehold.co/500x400/fce8ef/c03a5f?text=New+Baby" alt="It's a girl new baby yard card display" width="500" height="400" loading="lazy">
+        <div class="gallery-preview-overlay"><span class="gallery-preview-label">Saratoga Springs, 2024</span></div>
+      </div>
+      <div class="gallery-preview-item reveal">
+        <img src="https://placehold.co/500x400/2d0a1a/fce8ef?text=Milestone+Birthday" alt="50th birthday milestone yard card display in Lehi Utah" width="500" height="400" loading="lazy">
+        <div class="gallery-preview-overlay"><span class="gallery-preview-label">Lehi, 2024</span></div>
+      </div>
+      <div class="gallery-preview-item reveal">
+        <img src="https://placehold.co/500x400/c03a5f/ffffff?text=Retirement+Display" alt="Retirement yard card display for Eagle Mountain retiree" width="500" height="400" loading="lazy">
+        <div class="gallery-preview-overlay"><span class="gallery-preview-label">Eagle Mountain, 2024</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Reviews ──────────────────────────────────────────────────────────── -->
+<section class="reviews-section">
+  <div class="reviews-inner">
+    <p class="eyebrow reviews-label" style="color:var(--rose-lt);">What Families Say</p>
+    <h2 class="reviews-title">Our Neighbors Love It</h2>
+    <div class="reviews-carousel-wrap" id="reviewsCarousel">
+
+      <!-- Slide 1 — confirmed -->
+      <div class="review-slide active">
+        <div class="review-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-quote">"Definitely brightened up her day. The display was up when we woke up and it was perfect - exactly what we'd asked for. So easy."</p>
+        <p class="review-name">Happy Customer</p>
+        <p class="review-location">Eagle Mountain, UT</p>
+        <div class="review-platform">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="#4285F4"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          Google Review
+        </div>
+      </div>
+
+      <!-- Slide 2 — confirmed -->
+      <div class="review-slide">
+        <div class="review-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-quote">"Best!! Made him feel so special. We couldn't believe how great the display looked - the whole neighborhood was stopping to take pictures."</p>
+        <p class="review-name">Satisfied Family</p>
+        <p class="review-location">Eagle Mountain, UT</p>
+        <div class="review-platform">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="#4285F4"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          Google Review
+        </div>
+      </div>
+
+      <!-- Slides 3-10 — placeholder (replace before launch) -->
+      <!-- placeholder slot 3 -->
+      <div class="review-slide">
+        <div class="review-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-quote">"We did this for my mom's 70th birthday and she was in tears when she looked out the window. Worth every penny."</p>
+        <p class="review-name">Sarah M.</p>
+        <p class="review-location">Eagle Mountain, UT</p>
+        <div class="review-platform">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="#4285F4"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          Google Review
+        </div>
+      </div>
+
+      <!-- placeholder slot 4 -->
+      <div class="review-slide">
+        <div class="review-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-quote">"Booked for my son's graduation and they pulled it off perfectly. Display was up before 6am. The neighbors kept stopping to ask who did it."</p>
+        <p class="review-name">Jennifer T.</p>
+        <p class="review-location">Lehi, UT</p>
+        <div class="review-platform">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="#4285F4"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          Google Review
+        </div>
+      </div>
+
+    </div>
+    <div class="review-dots" id="reviewDots">
+      <button class="review-dot active" data-index="0" aria-label="Review 1"></button>
+      <button class="review-dot" data-index="1" aria-label="Review 2"></button>
+      <button class="review-dot" data-index="2" aria-label="Review 3"></button>
+      <button class="review-dot" data-index="3" aria-label="Review 4"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA Interrupt ─────────────────────────────────────────────────────── -->
+<section class="cta-interrupt reveal">
+  <h2>Ready to Make Someone's Day?</h2>
+  <p>Dates fill up fast around graduation season - grab yours now.</p>
+  <a href="booking.html" class="btn-white">Book Your Date</a>
+</section>
+
+<!-- ── Footer ────────────────────────────────────────────────────────────── -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="logo.png" alt="Cedar Valley Yard Cards" class="footer-brand-logo" loading="lazy">
+      <p>Eagle Mountain's Yard Card Specialists. Full-service setup and teardown - you take all the credit.</p>
+      <a href="tel:8015989197" class="footer-phone">(801) 598-9197</a>
+      <a href="booking.html" class="btn" style="font-size:13px; padding:10px 20px;">Book Your Date</a>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/cedarvalleyyardcards/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.facebook.com/cedarvalleyyardcards" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <div class="footer-links-grid">
+        <a href="occasions.html">Occasions</a>
+        <a href="occasions.html#birthdays">Birthdays</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="occasions.html#graduations">Graduations</a>
+        <a href="ideas.html">Ideas</a>
+        <a href="occasions.html#welcome-home">Welcome Home</a>
+        <a href="about.html">About Us</a>
+        <a href="occasions.html#new-baby">New Babies</a>
+        <a href="booking.html">Book Now</a>
+        <a href="occasions.html#retirement">Retirements</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <span class="footer-bar-left">&copy; 2026 Cedar Valley Yard Cards. All rights reserved.</span>
+    <span class="footer-bar-right">
+      Eagle Mountain, UT &bull;
+      <a href="https://rubyxqube.com" target="_blank" rel="noopener" class="rxq-credit">
+        <img src="logo-h-mono-white.png" alt="RubyxQube" height="16">
+        Built and powered by RubyxQube
+      </a>
+    </span>
+  </div>
+</footer>
+
+<script src="sparkles.js"></script>
+<script>
+  // ── Banner offset ──────────────────────────────────────────────────────
+  const banner = document.getElementById('demoBanner');
+  const dismiss = document.getElementById('bannerDismiss');
+  function syncBannerOffset() {
+    var h = (banner && !banner.classList.contains('hidden'))
+      ? banner.getBoundingClientRect().height : 0;
+    document.documentElement.style.setProperty('--banner-h', h + 'px');
+    document.body.classList.toggle('banner-visible', h > 0);
+  }
+  requestAnimationFrame(syncBannerOffset);
+  window.addEventListener('resize', syncBannerOffset);
+  dismiss.addEventListener('click', () => {
+    banner.classList.add('hidden');
+    document.documentElement.style.setProperty('--banner-h', '0px');
+    document.body.classList.remove('banner-visible');
+  });
+
+  // ── Mobile nav ─────────────────────────────────────────────────────────
+  const navHamburger = document.getElementById('navHamburger');
+  const navEl = document.getElementById('mainNav');
+  navHamburger.addEventListener('click', () => {
+    const isOpen = navEl.classList.toggle('nav-open');
+    navHamburger.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // ── Sparkles ───────────────────────────────────────────────────────────
+  new Sparkles('heroCanvas', { color: '#fce38a', density: 220, size: 1.5, speed: 0.4, opacity: 0.85 });
+
+  // ── Reviews carousel ───────────────────────────────────────────────────
+  const slides = document.querySelectorAll('.review-slide');
+  const dots = document.querySelectorAll('.review-dot');
+  let current = 0;
+  let autoTimer;
+
+  function goTo(idx) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = idx;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function nextSlide() {
+    goTo((current + 1) % slides.length);
+  }
+
+  function startAuto() {
+    autoTimer = setInterval(nextSlide, 5000);
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      clearInterval(autoTimer);
+      goTo(parseInt(dot.dataset.index));
+      startAuto();
+    });
+  });
+
+  startAuto();
+
+  // ── Reveal on scroll ────────────────────────────────────────────────────
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

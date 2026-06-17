@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Celebration Ideas | Cedar Valley Yard Cards - Eagle Mountain</title>
+  <meta name="description" content="Inspiration for celebrating Eagle Mountain families - graduation yard card ideas, missionary return surprises, milestone birthday displays, and how it all works.">
+  <link rel="canonical" href="https://cedar-valley-yard-cards.vercel.app/ideas">
+  <meta property="og:title" content="Celebration Ideas | Cedar Valley Yard Cards">
+  <meta property="og:description" content="Planning tips, occasion guides, and ideas for making someone feel extraordinary.">
+  <meta property="og:url" content="https://cedar-valley-yard-cards.vercel.app/ideas">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://placehold.co/1200x630/c03a5f/ffffff?text=Cedar+Valley+Yard+Cards">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700;800&family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+  <style>
+    /* ─── Page Hero ─────────────────────────────────────────────────────────── */
+    .page-hero {
+      height: 50vh;
+      min-height: 360px;
+      display: flex;
+      align-items: flex-end;
+    }
+    .inner-hero-content {
+      padding: 0 5vw 60px;
+      max-width: 760px;
+    }
+    .inner-hero-content .eyebrow { margin-bottom: 12px; color: var(--rose-lt); }
+    .inner-hero-content h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .inner-hero-content p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.75);
+      max-width: 560px;
+      line-height: 1.65;
+    }
+
+    /* ─── Article Card Grid (Layout 20) ────────────────────────────────────── */
+    .articles-index {
+      padding: 80px 5vw;
+      background: var(--bg);
+    }
+    .articles-index-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .articles-index h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 40px;
+    }
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .article-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .article-card:hover {
+      box-shadow: 0 8px 32px rgba(192,58,95,0.1);
+      transform: translateY(-3px);
+    }
+    .article-thumb {
+      aspect-ratio: 16/9;
+      overflow: hidden;
+    }
+    .article-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    .article-card:hover .article-thumb img { transform: scale(1.04); }
+    .article-card-body {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .article-tag {
+      font-family: 'Mulish', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--rose);
+      margin-bottom: 8px;
+    }
+    .article-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+      margin-bottom: 8px;
+      flex: 1;
+    }
+    .article-summary {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 16px;
+    }
+    .article-read-more {
+      color: var(--rose);
+      font-size: 13px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* ─── Inline Articles (Layout 19: Stacked Article) ─────────────────────── */
+    .articles-body {
+      background: var(--bg);
+      padding: 0 5vw 96px;
+    }
+    .article-col {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 80px 0 40px;
+      border-top: 1px solid var(--border);
+    }
+    .article-col:first-child { border-top: none; }
+    .article-col .article-tag {
+      display: block;
+      margin-bottom: 12px;
+    }
+    .article-col h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .article-col .article-img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 28px;
+      display: block;
+    }
+    .article-body-text {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text);
+    }
+    .article-body-text p { margin-bottom: 20px; }
+    .article-body-text h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text);
+      margin: 36px 0 12px;
+    }
+    .article-body-text ul {
+      margin: 0 0 20px 24px;
+    }
+    .article-body-text ul li {
+      margin-bottom: 8px;
+      color: var(--text-muted);
+    }
+
+    /* ─── Soft CTA Box ──────────────────────────────────────────────────────── */
+    .soft-cta {
+      max-width: 720px;
+      margin: 0 auto;
+      border: 2px solid var(--rose);
+      border-radius: 12px;
+      padding: 32px 36px;
+      text-align: center;
+    }
+    .soft-cta p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .soft-cta a {
+      color: var(--rose);
+      font-weight: 700;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+<!-- ── Nav ─────────────────────────────────────────────────────────────── -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Cedar Valley Yard Cards" height="44" loading="eager"></a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="occasions.html">Occasions</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="ideas.html" class="active">Ideas</a></li>
+    <li><a href="about.html">About</a></li>
+    <li class="nav-book"><a href="booking.html">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- ── Page Hero ────────────────────────────────────────────────────────── -->
+<section class="page-hero">
+  <canvas id="heroCanvas" class="hero-canvas"></canvas>
+  <div class="hero-content inner-hero-content">
+    <span class="eyebrow">Ideas + Guides</span>
+    <h1>Celebration Inspiration for Eagle Mountain Families</h1>
+    <p>Planning tips, occasion guides, and ideas for making someone feel extraordinary.</p>
+  </div>
+</section>
+
+<!-- ── Article Card Grid ─────────────────────────────────────────────────── -->
+<section class="articles-index">
+  <div class="articles-index-inner">
+    <h2 class="reveal">Planning Guides</h2>
+    <div class="article-grid">
+
+      <div class="article-card reveal">
+        <div class="article-thumb">
+          <img src="https://placehold.co/560x315/fce8ef/c03a5f?text=Planning+Guide" alt="Planning a yard card surprise - tips for pulling it off without them knowing" width="560" height="315" loading="lazy">
+        </div>
+        <div class="article-card-body">
+          <span class="article-tag">Planning</span>
+          <h3 class="article-card-title">How to Pull Off a Yard Card Surprise (Without Them Knowing)</h3>
+          <p class="article-summary">Coordinate timing, keep the address handy, let us handle the rest.</p>
+          <a href="#article-1" class="article-read-more">Read the guide <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+        </div>
+      </div>
+
+      <div class="article-card reveal">
+        <div class="article-thumb">
+          <img src="https://placehold.co/560x315/9a2d4a/fce8ef?text=Graduation+Ideas" alt="Graduation yard card ideas for Eagle Mountain and Lehi seniors" width="560" height="315" loading="lazy">
+        </div>
+        <div class="article-card-body">
+          <span class="article-tag">Graduations</span>
+          <h3 class="article-card-title">Graduation Yard Card Ideas for Eagle Mountain Seniors</h3>
+          <p class="article-summary">Local tips for grad season in Eagle Mountain and Lehi - including when to book.</p>
+          <a href="#article-2" class="article-read-more">Read the guide <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+        </div>
+      </div>
+
+      <div class="article-card reveal">
+        <div class="article-thumb">
+          <img src="https://placehold.co/560x315/3a9ab8/ffffff?text=Missionary+Return" alt="Missionary return yard card ideas for LDS families in Eagle Mountain Utah" width="560" height="315" loading="lazy">
+        </div>
+        <div class="article-card-body">
+          <span class="article-tag">Welcome Home</span>
+          <h3 class="article-card-title">Missionary Return Yard Cards: Making the Welcome Home Unforgettable</h3>
+          <p class="article-summary">Utah County families know how special a mission return is. Here's how to honor it.</p>
+          <a href="#article-3" class="article-read-more">Read the guide <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+        </div>
+      </div>
+
+      <div class="article-card reveal">
+        <div class="article-thumb">
+          <img src="https://placehold.co/560x315/c03a5f/ffffff?text=Milestone+Birthdays" alt="Milestone birthday yard card ideas for 16th, 30th, 40th, 50th, and 60th birthdays" width="560" height="315" loading="lazy">
+        </div>
+        <div class="article-card-body">
+          <span class="article-tag">Birthdays</span>
+          <h3 class="article-card-title">Milestone Birthday Displays: 16, 30, 40, 50, 60, and Beyond</h3>
+          <p class="article-summary">Some birthdays deserve more than a card. Here's how to make the milestone count.</p>
+          <a href="#article-4" class="article-read-more">Read the guide <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Inline Articles ────────────────────────────────────────────────────── -->
+<section class="articles-body">
+
+  <div class="article-col reveal" id="article-1">
+    <span class="article-tag">Planning</span>
+    <h2>How to Pull Off a Yard Card Surprise (Without Them Knowing)</h2>
+    <img
+      src="https://placehold.co/720x405/fce8ef/c03a5f?text=Planning+Guide"
+      alt="Couple planning a yard card surprise for a family member's birthday"
+      class="article-img"
+      width="720" height="405"
+      loading="lazy"
+    >
+    <div class="article-body-text">
+      <p>The best yard card surprises share one thing in common: the person had absolutely no idea. Here's how families in Eagle Mountain pull it off every time without letting anything slip.</p>
+
+      <h3>Start with the address, not the occasion</h3>
+      <p>When you book with us, the first thing we need is the delivery address. Double-check it. Triple-check it. The most common hiccup in a yard card surprise isn't timing - it's a wrong house number or a missing street suffix. Get the full address, including any unit or lot information, before you contact us.</p>
+
+      <h3>Coordinate the timing around their schedule</h3>
+      <p>We set up early - typically between 5am and 7am - so the display is waiting when they wake up. But you know their schedule better than we do. If they're an early riser, let us know. If they leave for work at 6am and you want the display up first, tell us. We'll adjust setup time to fit the surprise window you need.</p>
+
+      <h3>Warn the neighbors you trust</h3>
+      <p>This one sounds counterintuitive, but a heads-up to the immediate neighbors prevents accidental spoilers. You don't need to tell everyone - just the neighbor who's likely to see our truck pull up and post something on the neighborhood Facebook group before your person even wakes up.</p>
+
+      <h3>Let us handle the rest</h3>
+      <p>Once we have your date, address, occasion details, and any color or message preferences, our job is to make you look like the most thoughtful person in their life. You don't need to coordinate the setup, check in the morning to confirm we're there, or stress about teardown. That's all on us. Your only job is to watch their face when they see it.</p>
+
+      <p>Ready to plan yours? <a href="booking.html" style="color:var(--rose);font-weight:700;">Book your date here</a> and we'll confirm within 24 hours.</p>
+    </div>
+  </div>
+
+  <div class="article-col reveal" id="article-2">
+    <span class="article-tag">Graduations</span>
+    <h2>Graduation Yard Card Ideas for Eagle Mountain Seniors</h2>
+    <img
+      src="https://placehold.co/720x405/9a2d4a/fce8ef?text=Graduation+Season+Guide"
+      alt="Graduation yard card display ideas for Eagle Mountain and Lehi high school seniors"
+      class="article-img"
+      width="720" height="405"
+      loading="lazy"
+    >
+    <div class="article-body-text">
+      <p>Graduation season in Eagle Mountain and Lehi is our busiest time of year - and for good reason. There are few moments in a teenager's life that feel as significant as finishing high school, and the yard display is one of the first things they see when they come home after the ceremony.</p>
+
+      <h3>Book as early as February or March</h3>
+      <p>We're not saying this to create urgency for its own sake. May and June dates genuinely fill up 6 to 8 weeks in advance. By mid-April, weekends near graduation dates are typically gone. If you know the graduation date, book it now. You can always adjust details closer to the time - but you can't add availability that isn't there.</p>
+
+      <h3>What to include on the display</h3>
+      <p>The most popular graduation displays include the graduate's first name, their graduation year, and their school. If you have school colors, we'll match them. Some families add a quote or a single word ("Congrats!" or "We're proud!") - totally up to you. The important thing is to personalize it so they know the display is for them specifically, not a generic congratulations sign.</p>
+
+      <h3>Make it last all day</h3>
+      <p>Most families choose to keep the display up for the day of graduation and one or two days after. Relatives, friends, and neighbors will stop by - it extends the celebration past just the ceremony. We'll coordinate teardown timing when you book.</p>
+
+      <p>For Eagle Mountain seniors graduating in May or June, now is the right time to secure your date. <a href="booking.html?occasion=graduation" style="color:var(--rose);font-weight:700;">Book a graduation display</a> and let's make it one they remember.</p>
+    </div>
+  </div>
+
+  <div class="article-col reveal" id="article-3">
+    <span class="article-tag">Welcome Home</span>
+    <h2>Missionary Return Yard Cards: Making the Welcome Home Unforgettable</h2>
+    <img
+      src="https://placehold.co/720x405/3a9ab8/ffffff?text=Missionary+Return+Guide"
+      alt="Welcome home missionary return yard card display guide for LDS families in Eagle Mountain and Utah County"
+      class="article-img"
+      width="720" height="405"
+      loading="lazy"
+    >
+    <div class="article-body-text">
+      <p>In Eagle Mountain and throughout Utah County, a missionary return is one of the most significant homecoming moments a family experiences. Two years of anticipation. Hundreds of letters and emails. And then the day finally comes. The yard display should match that moment.</p>
+
+      <h3>Start with the mission name</h3>
+      <p>The single most meaningful detail you can add to a missionary return display is the mission name. "Welcome Home Elder Anderson - Ecuador Guayaquil Mission." That specificity - the place they served, the title they earned - tells the whole neighborhood what this person just did. It's the difference between a generic welcome home and a display that makes them stop and process it when they see it for the first time.</p>
+
+      <h3>Coordinate with the homecoming schedule</h3>
+      <p>Missionary returns in Utah County often involve airport pickups in the early morning or late night. We'll set up based on the expected arrival time. Tell us when the car is likely to arrive in the neighborhood, and we'll make sure the display is in place before they get there. If the schedule changes, text us - we're flexible.</p>
+
+      <h3>Sister missionaries and elders deserve the same celebration</h3>
+      <p>We've noticed a tendency in the community to go bigger for elders than for sisters. We'd gently push back on that. A sister returning from 18 months of service put in the same dedication, the same sacrifice, the same love for the people she served. The display should reflect that.</p>
+
+      <h3>Military and study abroad homecomings</h3>
+      <p>Missionary returns get a lot of attention in our community, but military homecomings and returns from study abroad programs deserve exactly the same treatment. The emotion of that moment - someone you love walking back through the door after months away - is the same regardless of where they were. We customize for every type of homecoming.</p>
+
+      <p><a href="booking.html?occasion=welcome-home" style="color:var(--rose);font-weight:700;">Book a welcome home display</a> and let's make the first thing they see when they pull into the neighborhood be something they'll never forget.</p>
+    </div>
+  </div>
+
+  <div class="article-col reveal" id="article-4">
+    <span class="article-tag">Birthdays</span>
+    <h2>Milestone Birthday Displays: 16, 30, 40, 50, 60, and Beyond</h2>
+    <img
+      src="https://placehold.co/720x405/c03a5f/ffffff?text=Milestone+Birthday+Guide"
+      alt="Milestone birthday yard card display ideas for sweet 16, 30th, 40th, 50th, and 60th birthdays"
+      class="article-img"
+      width="720" height="405"
+      loading="lazy"
+    >
+    <div class="article-body-text">
+      <p>Some birthdays feel different. Not just older - more significant. A 16th, a 30th, a 50th. These are the birthdays where people take stock of where they've been and where they're going. A yard card display doesn't just celebrate the number - it says "we see how significant this is."</p>
+
+      <h3>Sweet 16</h3>
+      <p>The sweet sixteen is a first big milestone - often the first birthday where the person feels truly recognized as growing up. The displays that work best here are colorful and personalized: name in giant letters, the number 16, and a short message. If she has a favorite color or a theme, we can work with it.</p>
+
+      <h3>The 30s and 40s - the "over the hill" generation</h3>
+      <p>Turning 30 or 40 is culturally loaded in a way that 29 and 39 aren't. Lean into it. "Flirty Thirty," "Fabulous at Forty," or just their name and the number, big and bold. The humor and the pride live together in these displays, and the person usually alternates between laughing and genuinely feeling celebrated.</p>
+
+      <h3>50th, 60th, and beyond - the milestone birthdays</h3>
+      <p>These are the birthdays where a yard sign doesn't feel like enough and a party isn't always feasible. A yard card display bridges the gap. It's visible, it's surprising, and it tells the whole neighborhood that this person has done something worth celebrating. At 50, 60, 70, and beyond, the number in giant letters on the lawn is a statement of pride, not embarrassment.</p>
+
+      <ul>
+        <li>Choose 1-2 colors that feel personal to them</li>
+        <li>Include their name - not just the age</li>
+        <li>Keep the message short and specific to who they are</li>
+        <li>Consider keeping the display up for 2-3 days so everyone can see it</li>
+      </ul>
+
+      <p>No matter the milestone, we'll make sure the display reflects exactly who they are and how much this birthday means. <a href="booking.html?occasion=birthday" style="color:var(--rose);font-weight:700;">Book a birthday display</a> today.</p>
+    </div>
+  </div>
+
+  <!-- Soft CTA -->
+  <div class="soft-cta reveal">
+    <p>Ready to plan your celebration?</p>
+    <a href="booking.html">Book Your Date <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="display:inline;vertical-align:middle;"><polyline points="9 18 15 12 9 6"/></svg></a>
+  </div>
+
+</section>
+
+<!-- ── Footer ────────────────────────────────────────────────────────────── -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="logo.png" alt="Cedar Valley Yard Cards" class="footer-brand-logo" loading="lazy">
+      <p>Eagle Mountain's Yard Card Specialists. Full-service setup and teardown - you take all the credit.</p>
+      <a href="tel:8015989197" class="footer-phone">(801) 598-9197</a>
+      <a href="booking.html" class="btn" style="font-size:13px; padding:10px 20px;">Book Your Date</a>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/cedarvalleyyardcards/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.facebook.com/cedarvalleyyardcards" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <div class="footer-links-grid">
+        <a href="occasions.html">Occasions</a>
+        <a href="occasions.html#birthdays">Birthdays</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="occasions.html#graduations">Graduations</a>
+        <a href="ideas.html">Ideas</a>
+        <a href="occasions.html#welcome-home">Welcome Home</a>
+        <a href="about.html">About Us</a>
+        <a href="occasions.html#new-baby">New Babies</a>
+        <a href="booking.html">Book Now</a>
+        <a href="occasions.html#retirement">Retirements</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <span class="footer-bar-left">&copy; 2026 Cedar Valley Yard Cards. All rights reserved.</span>
+    <span class="footer-bar-right">
+      Eagle Mountain, UT &bull;
+      <a href="https://rubyxqube.com" target="_blank" rel="noopener" class="rxq-credit">
+        <img src="logo-h-mono-white.png" alt="RubyxQube" height="16">
+        Built and powered by RubyxQube
+      </a>
+    </span>
+  </div>
+</footer>
+
+</div><!-- .page-wrap -->
+
+<script src="sparkles.js"></script>
+<script>
+  // Mobile nav
+  const navHamburger = document.getElementById('navHamburger');
+  const navEl = document.getElementById('mainNav');
+  navHamburger.addEventListener('click', () => {
+    const isOpen = navEl.classList.toggle('nav-open');
+    navHamburger.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // Sparkles
+  new Sparkles('heroCanvas', { color: '#fce38a', density: 140, size: 1.5, speed: 0.4, opacity: 0.85 });
+
+  // Reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

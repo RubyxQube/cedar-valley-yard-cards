@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Cedar Valley Yard Cards - Eagle Mountain Celebrations</title>
+  <meta name="description" content="Browse our yard card setups for Eagle Mountain families - birthdays, graduations, welcome homes, and more. 5 years of celebrations.">
+  <link rel="canonical" href="https://cedar-valley-yard-cards.vercel.app/gallery">
+  <meta property="og:title" content="Gallery | Cedar Valley Yard Cards">
+  <meta property="og:description" content="Browse our yard card setups for Eagle Mountain families - birthdays, graduations, welcome homes, and more.">
+  <meta property="og:url" content="https://cedar-valley-yard-cards.vercel.app/gallery">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://placehold.co/1200x630/c03a5f/ffffff?text=Cedar+Valley+Yard+Cards">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700;800&family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+  <style>
+    /* ─── Page Hero ─────────────────────────────────────────────────────────── */
+    .page-hero {
+      height: 50vh;
+      min-height: 360px;
+      display: flex;
+      align-items: flex-end;
+    }
+    .inner-hero-content {
+      padding: 0 5vw 60px;
+      max-width: 760px;
+    }
+    .inner-hero-content .eyebrow { margin-bottom: 12px; color: var(--rose-lt); }
+    .inner-hero-content h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .inner-hero-content p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.75);
+      max-width: 520px;
+      line-height: 1.65;
+    }
+
+    /* ─── Gallery Section ───────────────────────────────────────────────────── */
+    .gallery-section {
+      padding: 72px 5vw 96px;
+      background: var(--bg);
+    }
+    .gallery-section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ─── Filter Tabs ───────────────────────────────────────────────────────── */
+    .gallery-filters {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      font-family: 'Mulish', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: 20px;
+      border: 2px solid var(--border);
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover {
+      border-color: var(--rose);
+      color: var(--rose);
+    }
+    .filter-btn.active {
+      background: var(--rose);
+      border-color: var(--rose);
+      color: #fff;
+    }
+
+    /* ─── Masonry Grid (Layout 28 + 29) ────────────────────────────────────── */
+    .gallery-masonry {
+      columns: 3;
+      gap: 16px;
+    }
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 16px;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.03); }
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0);
+      transition: background 0.3s;
+      display: flex;
+      align-items: flex-end;
+      padding: 16px;
+    }
+    .gallery-item:hover .gallery-overlay {
+      background: rgba(192,58,95,0.55);
+    }
+    .gallery-label {
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .gallery-item:hover .gallery-label { opacity: 1; }
+    .gallery-item.hidden { display: none; }
+
+    @media (max-width: 768px) {
+      .gallery-masonry { columns: 2; }
+    }
+    @media (max-width: 480px) {
+      .gallery-masonry { columns: 1; }
+    }
+
+    /* ─── Conversion Row ────────────────────────────────────────────────────── */
+    .gallery-cta {
+      background: var(--rose);
+      padding: 72px 5vw;
+    }
+    .gallery-cta-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .gallery-cta-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-style: italic;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.5;
+      border-left: 3px solid rgba(255,255,255,0.4);
+      padding-left: 24px;
+    }
+    .gallery-cta-right { text-align: center; }
+    .gallery-cta-right h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 24px;
+    }
+    .btn-white {
+      display: inline-block;
+      background: #fff;
+      color: var(--rose);
+      font-family: 'Mulish', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 32px;
+      border-radius: 6px;
+      transition: transform 0.15s;
+    }
+    .btn-white:hover { transform: translateY(-2px); }
+
+    @media (max-width: 719px) {
+      .gallery-cta-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+<!-- ── Nav ─────────────────────────────────────────────────────────────── -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Cedar Valley Yard Cards" height="44" loading="eager"></a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="occasions.html">Occasions</a></li>
+    <li><a href="gallery.html" class="active">Gallery</a></li>
+    <li><a href="ideas.html">Ideas</a></li>
+    <li><a href="about.html">About</a></li>
+    <li class="nav-book"><a href="booking.html">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- ── Page Hero ────────────────────────────────────────────────────────── -->
+<section class="page-hero">
+  <canvas id="heroCanvas" class="hero-canvas"></canvas>
+  <div class="hero-content inner-hero-content">
+    <span class="eyebrow">Our Work</span>
+    <h1>Five Years of Celebrations in Eagle Mountain</h1>
+    <p>A few of our favorite setups - from sweet sixteens to missionary returns.</p>
+  </div>
+</section>
+
+<!-- ── Gallery ──────────────────────────────────────────────────────────── -->
+<section class="gallery-section">
+  <div class="gallery-section-inner">
+    <div class="gallery-filters reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="birthdays">Birthdays</button>
+      <button class="filter-btn" data-filter="graduations">Graduations</button>
+      <button class="filter-btn" data-filter="welcome-home">Welcome Home</button>
+      <button class="filter-btn" data-filter="other">Other</button>
+    </div>
+
+    <div class="gallery-masonry">
+
+      <!-- Birthdays (4) -->
+      <div class="gallery-item" data-cat="birthdays">
+        <img src="https://placehold.co/480x600/c03a5f/ffffff?text=Birthday+Display" alt="Happy Birthday yard card display with oversized letters in Eagle Mountain neighborhood" width="480" height="600" loading="lazy">
+        <div class="gallery-overlay"><span class="gallery-label">Birthday - Eagle Mountain, 2025</span></div>
+      </div>
+
+      <div class="gallery-item" data-cat="graduations">
+        <img src="https://placehold.co/480x380/9a2d4a/fce8ef?text=Graduation+2025" alt="Class of 2025 graduation yard card display in Lehi Utah" width="480" height="380" loading="lazy">
+        <div class="gallery-overlay"><span class="gallery-label">Graduation - Lehi, 2025</span></div>
+      </div>
+
+      <div class="gallery-item" data-cat="welcome-home">
+        <img src="https://placehold.co/480x520/3a9ab8/ffffff?text=Welcome+Home" alt="Welcome home missionary return yard card display in Eagle Mountain" width="480" height="520" loading="lazy">
+        <div class="gallery-overlay"><span class="gallery-label">Welcome Home - Eagle Mountain, 2025</span></div>
+      </div>
+
+      <div class="gallery-item" data-cat="other">
+        <img src="https://placehold.co/480x420/fce8ef/c03a5f?text=It%27s+a+Girl!" alt="It's a girl new baby announcement yard card display in Saratoga Springs" width="480" height="420" loading="lazy">
+        <div class="gallery-overlay"><span class="gallery-label">New Baby - Saratoga Springs, 2024</span></div>
+      </div>
+
+      <div class="gallery-item" data-cat="birthdays">
+        <img src="https://placehold.co/480x560/c03a5f/ffffff?text=Sweet+16" alt="Sweet 16 birthday yard card display with number 16 and decorative pieces" width="480" height="560" loading="lazy">
+        <div class="gallery-overlay"><span class="gallery-label">Sweet 16 - Eagle Mountain, 2024</span></div>
+      </div>
+
+      <div class="gallery-item" data-cat="graduations">
+        <img src="https://placehold.co/480x460/150610/fce8ef?text=Class+of+2024" alt="Class of 2024 graduation yard card with school name in Eagle Mountain" width="480" height="460" loading="lazy">
+        <div class="gallery-overlay"><span class="gallery-label">Graduation - Eagle Mountain, 2024</span></div>
+      </div>
+
+      <div class="gallery-item" data-cat="welcome-home">
+        <img src="https://placehold.co/480x400/3a9ab8/ffffff?text=Elder+Returns" alt="Elder returns from mission welcome home yard card display in Eagle Mountain" width="480" height="400" loading="lazy">
+        <div class="gallery-overlay"><span class="gallery-label">Mission Return - Eagle Mountain, 2024</span></div>
+      </div>
+
+      <div class="gallery-item" data-cat="birthdays">
+        <img src="https://placehold.co/480x580/9a2d4a/fce8ef?text=50th+Birthday" alt="50th milestone birthday yard card display with large number 50 in Lehi" width="480" height="580" loading="lazy">
+        <div class="gallery-overlay"><span class="gallery-label">50th Birthday - Lehi, 2024</span></div>
+      </div>
+
+      <div class="gallery-item" data-cat="other">
+        <img src="https://placehold.co/480x440/c03a5f/ffffff?text=Retirement+Party" alt="Retirement yard card display congratulating a retiree in Eagle Mountain" width="480" height="440" loading="lazy">
+        <div class="gallery-overlay"><span class="gallery-label">Retirement - Eagle Mountain, 2024</span></div>
+      </div>
+
+      <div class="gallery-item" data-cat="birthdays">
+        <img src="https://placehold.co/480x360/fce8ef/c03a5f?text=Birthday+1st" alt="First birthday yard card display with big number 1 in Saratoga Springs" width="480" height="360" loading="lazy">
+        <div class="gallery-overlay"><span class="gallery-label">1st Birthday - Saratoga Springs, 2023</span></div>
+      </div>
+
+      <div class="gallery-item" data-cat="graduations">
+        <img src="https://placehold.co/480x500/9a2d4a/fce8ef?text=CONGRATULATIONS" alt="Congratulations graduation yard card for Eagle Mountain High School senior" width="480" height="500" loading="lazy">
+        <div class="gallery-overlay"><span class="gallery-label">Graduation - Eagle Mountain, 2023</span></div>
+      </div>
+
+      <div class="gallery-item" data-cat="welcome-home">
+        <img src="https://placehold.co/480x480/150610/fce8ef?text=Welcome+Back+Sister" alt="Welcome back missionary sister return yard card display in Lehi" width="480" height="480" loading="lazy">
+        <div class="gallery-overlay"><span class="gallery-label">Sister Return - Lehi, 2023</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Conversion Row ────────────────────────────────────────────────────── -->
+<section class="gallery-cta">
+  <div class="gallery-cta-inner">
+    <div class="gallery-cta-quote">
+      "Definitely brightened up her day. The display was up when we woke up and it was perfect - exactly what we'd asked for. So easy."
+    </div>
+    <div class="gallery-cta-right reveal">
+      <h2>Want to See Your Yard Like This?</h2>
+      <a href="booking.html" class="btn-white">Book Your Date</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ────────────────────────────────────────────────────────────── -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="logo.png" alt="Cedar Valley Yard Cards" class="footer-brand-logo" loading="lazy">
+      <p>Eagle Mountain's Yard Card Specialists. Full-service setup and teardown - you take all the credit.</p>
+      <a href="tel:8015989197" class="footer-phone">(801) 598-9197</a>
+      <a href="booking.html" class="btn" style="font-size:13px; padding:10px 20px;">Book Your Date</a>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/cedarvalleyyardcards/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.facebook.com/cedarvalleyyardcards" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <div class="footer-links-grid">
+        <a href="occasions.html">Occasions</a>
+        <a href="occasions.html#birthdays">Birthdays</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="occasions.html#graduations">Graduations</a>
+        <a href="ideas.html">Ideas</a>
+        <a href="occasions.html#welcome-home">Welcome Home</a>
+        <a href="about.html">About Us</a>
+        <a href="occasions.html#new-baby">New Babies</a>
+        <a href="booking.html">Book Now</a>
+        <a href="occasions.html#retirement">Retirements</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <span class="footer-bar-left">&copy; 2026 Cedar Valley Yard Cards. All rights reserved.</span>
+    <span class="footer-bar-right">
+      Eagle Mountain, UT &bull;
+      <a href="https://rubyxqube.com" target="_blank" rel="noopener" class="rxq-credit">
+        <img src="logo-h-mono-white.png" alt="RubyxQube" height="16">
+        Built and powered by RubyxQube
+      </a>
+    </span>
+  </div>
+</footer>
+
+</div><!-- .page-wrap -->
+
+<script src="sparkles.js"></script>
+<script>
+  // Mobile nav
+  const navHamburger = document.getElementById('navHamburger');
+  const navEl = document.getElementById('mainNav');
+  navHamburger.addEventListener('click', () => {
+    const isOpen = navEl.classList.toggle('nav-open');
+    navHamburger.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // Sparkles
+  new Sparkles('heroCanvas', { color: '#fce38a', density: 140, size: 1.5, speed: 0.4, opacity: 0.85 });
+
+  // Gallery filter
+  document.querySelectorAll('[data-filter]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.dataset.filter;
+      document.querySelectorAll('.gallery-item').forEach(item => {
+        item.classList.toggle('hidden', cat !== 'all' && item.dataset.cat !== cat);
+      });
+    });
+  });
+
+  // Reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
