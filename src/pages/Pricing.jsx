@@ -114,7 +114,7 @@ export default function Pricing() {
               },
               {
                 q: 'Is the $80 a deposit or the full amount?',
-                a: 'That\'s the full amount. No deposit, no hidden fees. $80 covers the whole experience.',
+                a: 'That\'s the full base amount — no deposit, no hidden fees. If you add rush delivery or are outside our standard area, we\'ll be upfront about any extra cost before you confirm.',
               },
             ].map(({ q, a }) => (
               <div key={q} className="pricing-faq-item reveal">
