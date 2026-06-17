@@ -21,7 +21,7 @@ export default function Occasions() {
         <SparklesCanvas density={140} />
         <div className="hero-content inner-hero-content">
           <span className="eyebrow">All Occasions</span>
-          <h1>Every Celebration Has Its Moment</h1>
+          <h1>Every Celebration <span className="hero-accent">Has Its Moment</span></h1>
           <p>We set up yard cards for birthdays, graduations, welcome homes, new babies, retirements, and everything in between.</p>
         </div>
       </section>

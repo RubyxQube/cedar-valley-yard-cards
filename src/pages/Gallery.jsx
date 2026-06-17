@@ -77,7 +77,7 @@ export default function Gallery() {
         <SparklesCanvas density={140} />
         <div className="hero-content inner-hero-content">
           <span className="eyebrow">Our Work</span>
-          <h1>Five Years of Celebrations in Eagle Mountain</h1>
+          <h1><span className="hero-accent">Five Years</span> of Celebrations in Eagle Mountain</h1>
           <p>A few of our favorite setups - from sweet sixteens to missionary returns.</p>
         </div>
       </section>

@@ -28,7 +28,7 @@ export default function Ideas() {
         <SparklesCanvas density={140} />
         <div className="hero-content inner-hero-content">
           <span className="eyebrow">Ideas + Guides</span>
-          <h1>Celebration Inspiration for Eagle Mountain Families</h1>
+          <h1>Celebration <span className="hero-accent">Inspiration</span> for Eagle Mountain Families</h1>
           <p>Planning tips, occasion guides, and ideas for making someone feel extraordinary.</p>
         </div>
       </section>

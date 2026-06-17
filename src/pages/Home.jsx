@@ -94,7 +94,7 @@ export default function Home() {
         <SparklesCanvas density={220} />
         <div className="hero-content hero-text-block">
           <span className="hero-eyebrow">Eagle Mountain's Yard Card Rental</span>
-          <h1>Celebrate Someone Special</h1>
+          <h1>Celebrate Someone <span className="hero-accent">Special</span></h1>
           <p className="hero-sub">We set it up before they wake up. You take all the credit.</p>
           <div className="hero-ctas">
             <Link to="/booking" className="btn">Book Your Date</Link>

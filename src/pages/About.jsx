@@ -14,7 +14,7 @@ export default function About() {
       <section className="page-hero about-hero">
         <SparklesCanvas density={160} />
         <div className="about-hero-content">
-          <h1>We've Been Surprising Our Eagle Mountain Neighbors for 5 Years.</h1>
+          <h1>We've Been <span className="hero-accent">Surprising</span> Our Eagle Mountain Neighbors for 5 Years.</h1>
         </div>
       </section>
 
