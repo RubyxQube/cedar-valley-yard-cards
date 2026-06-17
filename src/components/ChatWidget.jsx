@@ -60,26 +60,15 @@ function renderMarkdown(text) {
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([]);
-  const [displayMessages, setDisplayMessages] = useState([]);
+  const [displayMessages, setDisplayMessages] = useState([
+    { role: 'assistant', content: chatConfig.greeting },
+  ]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [leadCaptured, setLeadCaptured] = useState(false);
 
-  const greeted = useRef(false);
   const messagesBottomRef = useRef(null);
-
-  useEffect(() => {
-    if (greeted.current) return;
-    greeted.current = true;
-
-    const timer = setTimeout(() => {
-      setOpen(true);
-      setDisplayMessages([{ role: 'assistant', content: chatConfig.greeting }]);
-    }, 2500);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   useEffect(() => {
     messagesBottomRef.current?.scrollIntoView({ behavior: 'smooth' });
