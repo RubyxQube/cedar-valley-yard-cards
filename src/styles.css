@@ -360,12 +360,14 @@ nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rota
   font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 16px;
 }
 .inner-hero-content p { font-size: 16px; color: rgba(255,255,255,0.75); max-width: 560px; line-height: 1.65; }
+@media (max-width: 719px) { .inner-page-hero { height: 34vh; min-height: 240px; } }
 
 /* ─── Small Page Hero (Booking) ──────────────────────────────────────────── */
 .small-page-hero {
   height: 40vh; min-height: 280px;
   display: flex; align-items: center;
 }
+@media (max-width: 719px) { .small-page-hero { height: 30vh; min-height: 200px; } }
 .small-hero-content {
   padding: 0 5vw; max-width: 700px;
   margin: 0 auto; text-align: center; width: 100%;
@@ -481,6 +483,7 @@ nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rota
 /* ═══════════════════════════════════════════════════════════════════════════ */
 
 .about-hero { height: 50vh; min-height: 360px; position: relative; overflow: hidden; background: var(--hero-bg); display: flex; align-items: center; justify-content: center; }
+@media (max-width: 719px) { .about-hero { height: 34vh; min-height: 240px; } }
 .about-hero-content { position: relative; z-index: 10; text-align: center; padding: 0 5vw; max-width: 900px; }
 .about-hero-content h1 { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: clamp(40px, 6vw, 72px); color: #fff; line-height: 1.15; }
 
