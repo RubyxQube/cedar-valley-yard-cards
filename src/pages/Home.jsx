@@ -85,7 +85,7 @@ export default function Home() {
       <section className="page-hero home-hero" style={{ position: 'relative' }}>
         <div className="hero-img-wrap">
           <img
-            src="https://placehold.co/1400x800/04141a/e6f7f7?text=Yard+Card+Photo"
+            src="/images/hero/hero.webp"
             alt="Colorful oversized yard card display set up in an Eagle Mountain residential yard"
             width="1400" height="800" loading="eager" fetchPriority="high"
           />

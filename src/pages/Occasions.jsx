@@ -29,7 +29,7 @@ export default function Occasions() {
       {/* ── Birthday ── */}
       <section className="occasion-section feature-row row-light reveal" id="birthdays">
         <div className="feature-row-img">
-          <img src="https://placehold.co/600x500/c03a5f/ffffff?text=Birthday+Display" alt="Colorful oversized birthday yard card display" width="600" height="500" loading="lazy" />
+          <img src="/images/occasions/birthday.webp" alt="Colorful oversized birthday yard card display" width="800" height="533" loading="lazy" />
         </div>
         <div className="feature-row-text">
           <span className="eyebrow">Birthdays</span>
@@ -43,7 +43,7 @@ export default function Occasions() {
       {/* ── Graduation ── */}
       <section className="occasion-section feature-row flip row-blush reveal" id="graduations">
         <div className="feature-row-img">
-          <img src="https://placehold.co/600x500/9a2d4a/fce8ef?text=Graduation+Display" alt="Graduation yard card display with class year in Eagle Mountain Utah" width="600" height="500" loading="lazy" />
+          <img src="/images/occasions/graduation.webp" alt="Graduation yard card display with class year in Eagle Mountain Utah" width="800" height="533" loading="lazy" />
         </div>
         <div className="feature-row-text">
           <span className="eyebrow">Graduations</span>
@@ -57,7 +57,7 @@ export default function Occasions() {
       {/* ── Welcome Home ── */}
       <section className="occasion-section feature-row row-light reveal" id="welcome-home">
         <div className="feature-row-img">
-          <img src="https://placehold.co/600x500/3a9ab8/ffffff?text=Welcome+Home+Display" alt="Welcome home missionary return yard card display" width="600" height="500" loading="lazy" />
+          <img src="/images/occasions/missionary.webp" alt="Welcome home missionary return yard card display" width="800" height="533" loading="lazy" />
         </div>
         <div className="feature-row-text">
           <span className="eyebrow">Welcome Home</span>

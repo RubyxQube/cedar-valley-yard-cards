@@ -23,8 +23,8 @@ export default function About() {
         <div className="origin-row">
           <div className="origin-img reveal">
             <img
-              src="https://placehold.co/500x600/fce8ef/c03a5f?text=Owner+Photo"
-              alt="Cedar Valley Yard Cards owner in Eagle Mountain, Utah"
+              src="/images/about/owners.webp"
+              alt="Cedar Valley Yard Cards owners in Eagle Mountain, Utah"
               width="500" height="600" loading="lazy"
             />
           </div>
@@ -82,9 +82,9 @@ export default function About() {
             ))}
           </div>
           <div className="photos-grid reveal">
-            <img src="https://placehold.co/600x450/c03a5f/ffffff?text=Yard+Setup" alt="Birthday yard card display" width="600" height="450" loading="lazy" />
-            <img src="https://placehold.co/600x450/3a9ab8/ffffff?text=Graduation+Setup" alt="Graduation yard card setup" width="600" height="450" loading="lazy" />
-            <img src="https://placehold.co/600x450/9a2d4a/ffffff?text=Welcome+Home" alt="Welcome home yard card display" width="600" height="450" loading="lazy" />
+            <img src="/images/about/setup-birthday.webp" alt="Birthday yard card display" width="600" height="400" loading="lazy" />
+            <img src="/images/about/setup-graduation.webp" alt="Graduation yard card setup" width="600" height="400" loading="lazy" />
+            <img src="/images/about/setup-welcome-home.webp" alt="Welcome home yard card display" width="600" height="400" loading="lazy" />
           </div>
         </div>
       </section>
