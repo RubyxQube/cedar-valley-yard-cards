@@ -151,10 +151,6 @@ nav {
 .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
 .nav-logo img {
   height: 64px; width: auto; display: block;
-  filter:
-    drop-shadow(0 0 2px #fff)
-    drop-shadow(0 0 2px #fff)
-    drop-shadow(0 0 3px #fff);
 }
 .nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
 .nav-links a {
