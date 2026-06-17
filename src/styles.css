@@ -424,7 +424,7 @@ nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rota
 .how-eyebrow { text-align: center; margin-bottom: 12px; }
 .how-title { text-align: center; font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 48px); font-weight: 700; color: var(--text); margin-bottom: 40px; }
 .how-title::after { content: ''; display: block; width: 160px; height: 2px; background: var(--border); margin: 28px auto 0; }
-.how-steps { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; padding-top: 24px; }
+.how-steps { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; }
 @media (max-width: 719px) { .how-steps { flex-direction: column; gap: 48px; } }
 .how-step { flex: 1; min-width: 220px; text-align: center; }
 .how-step-num { font-family: 'Cormorant Garamond', serif; font-size: 72px; font-weight: 800; color: var(--teal); line-height: 1; margin-bottom: 16px; display: block; }
