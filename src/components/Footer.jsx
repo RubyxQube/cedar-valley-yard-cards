@@ -44,7 +44,7 @@ export default function Footer() {
         <span className="footer-bar-right">
           Eagle Mountain, UT &bull;
           <a href={agency.url} target="_blank" rel="noopener" className="rxq-credit">
-            <img src={agency.logo} alt={agency.name} height="16" />
+            <img src="/rxq-logo.png" alt={agency.name} height="18" />
             Built and powered by {agency.name}
           </a>
         </span>

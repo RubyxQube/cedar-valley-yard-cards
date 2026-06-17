@@ -13,7 +13,11 @@ export default function DemoBanner() {
     }
     sync();
     window.addEventListener('resize', sync);
-    return () => window.removeEventListener('resize', sync);
+    return () => {
+      window.removeEventListener('resize', sync);
+      document.documentElement.style.setProperty('--banner-h', '0px');
+      document.body.classList.remove('banner-visible');
+    };
   }, [visible]);
 
   if (!visible) return null;
