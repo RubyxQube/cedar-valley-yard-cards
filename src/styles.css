@@ -223,6 +223,7 @@ nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rota
     padding: 0; align-items: stretch;
   }
   nav.nav-open .nav-links li { border-bottom: 1px solid var(--w8); }
+  nav.nav-open .nav-links .nav-book { border-bottom: none; }
   nav.nav-open .nav-links li a { display: block; padding: 16px 24px; font-size: 16px; }
   nav.nav-open .nav-links .nav-book a { border-radius: 0; padding: 16px 24px; }
 }
