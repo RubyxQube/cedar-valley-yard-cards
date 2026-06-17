@@ -18,7 +18,11 @@ export default function Navbar() {
   return (
     <nav className={open ? 'nav-open' : ''} id="mainNav">
       <Link to="/" className="nav-logo" onClick={close}>
-        <img src="/logo-nav.png" alt={siteConfig.businessName} height="64" loading="eager" />
+        <img src="/logo-nav.png" alt={siteConfig.businessName} height="48" loading="eager" />
+        <div className="nav-logo-text">
+          <span className="nav-logo-top">Cedar Valley</span>
+          <span className="nav-logo-bottom">Yard Cards</span>
+        </div>
       </Link>
 
       <button
