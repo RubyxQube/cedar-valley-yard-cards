@@ -320,10 +320,10 @@ nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rota
 .feature-row-text p { font-size: 15px; color: var(--text-muted); line-height: 1.75; margin-bottom: 24px; }
 .feature-link { color: var(--teal); font-weight: 700; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; transition: gap 0.2s; }
 .feature-link:hover { gap: 10px; }
-.feature-row.row-light { background: var(--bg); }
-.feature-row.row-blush { background: var(--blush); }
 .feature-row:nth-child(odd) { background: var(--bg); }
 .feature-row:nth-child(even) { background: var(--blush); }
+.feature-row.row-light { background: var(--bg); }
+.feature-row.row-blush { background: var(--blush); }
 .feature-row.flip .feature-row-img { order: 2; }
 .feature-row.flip .feature-row-text { order: 1; }
 @media (max-width: 719px) {

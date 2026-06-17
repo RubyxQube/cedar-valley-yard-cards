@@ -148,7 +148,7 @@ export default function Home() {
 
       {/* ── Occasion Showcase ── */}
       <section>
-        <div className="feature-row reveal">
+        <div className="feature-row row-blush reveal">
           <div className="feature-row-img">
             <img src="/images/gallery/birthday-40-tanner.webp" alt="Oversized birthday yard card display" width="900" height="600" loading="lazy" />
           </div>
@@ -159,7 +159,7 @@ export default function Home() {
             <Link to="/booking?occasion=birthday" className="feature-link">Book a Birthday <ChevronRight /></Link>
           </div>
         </div>
-        <div className="feature-row flip reveal">
+        <div className="feature-row flip row-light reveal">
           <div className="feature-row-img">
             <img src="/images/gallery/graduation-brinley.webp" alt="Yard card graduation display" width="900" height="600" loading="lazy" />
           </div>
@@ -170,7 +170,7 @@ export default function Home() {
             <Link to="/booking?occasion=graduation" className="feature-link">Book a Graduation <ChevronRight /></Link>
           </div>
         </div>
-        <div className="feature-row reveal">
+        <div className="feature-row row-blush reveal">
           <div className="feature-row-img">
             <img src="/images/gallery/missionary-homecoming-sister-cannon.webp" alt="Welcome home yard card display" width="900" height="600" loading="lazy" />
           </div>
