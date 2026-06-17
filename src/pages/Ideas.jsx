@@ -9,10 +9,10 @@ const ChevronRight = ({ size = 12 }) => (
 );
 
 const CARDS = [
-  { tag: 'Planning', title: 'How to Pull Off a Yard Card Surprise (Without Them Knowing)', summary: 'Coordinate timing, keep the address handy, let us handle the rest.', href: '#article-1', img: 'https://placehold.co/560x315/fce8ef/c03a5f?text=Planning+Guide', alt: 'Planning a yard card surprise' },
-  { tag: 'Graduations', title: 'Graduation Yard Card Ideas for Eagle Mountain Seniors', summary: 'Local tips for grad season in Eagle Mountain and Lehi - including when to book.', href: '#article-2', img: 'https://placehold.co/560x315/9a2d4a/fce8ef?text=Graduation+Ideas', alt: 'Graduation yard card ideas' },
-  { tag: 'Welcome Home', title: 'Missionary Return Yard Cards: Making the Welcome Home Unforgettable', summary: 'Utah County families know how special a mission return is. Here\'s how to honor it.', href: '#article-3', img: 'https://placehold.co/560x315/3a9ab8/ffffff?text=Missionary+Return', alt: 'Missionary return yard card ideas' },
-  { tag: 'Birthdays', title: 'Milestone Birthday Displays: 16, 30, 40, 50, 60, and Beyond', summary: 'Some birthdays deserve more than a card. Here\'s how to make the milestone count.', href: '#article-4', img: 'https://placehold.co/560x315/c03a5f/ffffff?text=Milestone+Birthdays', alt: 'Milestone birthday yard card ideas' },
+  { tag: 'Planning', title: 'How to Pull Off a Yard Card Surprise (Without Them Knowing)', summary: 'Coordinate timing, keep the address handy, let us handle the rest.', href: '#article-1', img: '/images/gallery/birthday-robby-jo.webp', alt: 'Planning a yard card surprise' },
+  { tag: 'Graduations', title: 'Graduation Yard Card Ideas for Eagle Mountain Seniors', summary: 'Local tips for grad season in Eagle Mountain and Lehi - including when to book.', href: '#article-2', img: '/images/gallery/graduation-brinley.webp', alt: 'Graduation yard card ideas' },
+  { tag: 'Welcome Home', title: 'Missionary Return Yard Cards: Making the Welcome Home Unforgettable', summary: 'Utah County families know how special a mission return is. Here\'s how to honor it.', href: '#article-3', img: '/images/gallery/missionary-homecoming-sister-cannon.webp', alt: 'Missionary return yard card ideas' },
+  { tag: 'Birthdays', title: 'Milestone Birthday Displays: 16, 30, 40, 50, 60, and Beyond', summary: 'Some birthdays deserve more than a card. Here\'s how to make the milestone count.', href: '#article-4', img: '/images/gallery/birthday-40-tanner.webp', alt: 'Milestone birthday yard card ideas' },
 ];
 
 export default function Ideas() {

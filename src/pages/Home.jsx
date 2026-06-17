@@ -85,7 +85,7 @@ export default function Home() {
       <section className="page-hero home-hero" style={{ position: 'relative' }}>
         <div className="hero-img-wrap">
           <img
-            src="/images/hero/hero.webp"
+            src="/images/gallery/missionary-farewell-sister-rose.webp"
             alt="Colorful oversized yard card display set up in an Eagle Mountain residential yard"
             width="1400" height="800" loading="eager" fetchPriority="high"
           />
@@ -150,7 +150,7 @@ export default function Home() {
       <section>
         <div className="feature-row reveal">
           <div className="feature-row-img">
-            <img src="https://placehold.co/600x480/c03a5f/ffffff?text=Birthday+Setup" alt="Oversized birthday yard card display" width="600" height="480" loading="lazy" />
+            <img src="/images/gallery/birthday-40-tanner.webp" alt="Oversized birthday yard card display" width="900" height="600" loading="lazy" />
           </div>
           <div className="feature-row-text">
             <span className="eyebrow">Birthdays</span>
@@ -161,7 +161,7 @@ export default function Home() {
         </div>
         <div className="feature-row flip reveal">
           <div className="feature-row-img">
-            <img src="https://placehold.co/600x480/9a2d4a/fce8ef?text=Graduation+Setup" alt="Yard card graduation display" width="600" height="480" loading="lazy" />
+            <img src="/images/gallery/graduation-brinley.webp" alt="Yard card graduation display" width="900" height="600" loading="lazy" />
           </div>
           <div className="feature-row-text">
             <span className="eyebrow">Graduations</span>
@@ -172,7 +172,7 @@ export default function Home() {
         </div>
         <div className="feature-row reveal">
           <div className="feature-row-img">
-            <img src="https://placehold.co/600x480/3a9ab8/ffffff?text=Welcome+Home+Setup" alt="Welcome home yard card display" width="600" height="480" loading="lazy" />
+            <img src="/images/gallery/missionary-homecoming-sister-cannon.webp" alt="Welcome home yard card display" width="900" height="600" loading="lazy" />
           </div>
           <div className="feature-row-text">
             <span className="eyebrow">Welcome Home</span>
@@ -192,15 +192,15 @@ export default function Home() {
           </div>
           <div className="gallery-preview-grid">
             {[
-              ['https://placehold.co/500x400/c03a5f/ffffff?text=Birthday+Display', 'Birthday yard card setup', 'Eagle Mountain, 2025'],
-              ['https://placehold.co/500x400/9a2d4a/fce8ef?text=Graduation+Display', 'Graduation yard card display', 'Eagle Mountain, 2025'],
-              ['https://placehold.co/500x400/3a9ab8/ffffff?text=Welcome+Home', 'Welcome home missionary return', 'Eagle Mountain, 2025'],
-              ['https://placehold.co/500x400/fce8ef/c03a5f?text=New+Baby', "It's a girl new baby yard card", 'Saratoga Springs, 2024'],
-              ['https://placehold.co/500x400/2d0a1a/fce8ef?text=Milestone+Birthday', '50th birthday milestone yard card', 'Lehi, 2024'],
-              ['https://placehold.co/500x400/c03a5f/ffffff?text=Retirement+Display', 'Retirement yard card display', 'Eagle Mountain, 2024'],
+              ['/images/gallery/birthday-sweet-16-qwynn.webp',              'Sweet 16 yard card display',             'Sweet 16 — Eagle Mountain'],
+              ['/images/gallery/graduation-sofia.webp',                     'Graduation yard card display',           'Graduation — Eagle Mountain, 2026'],
+              ['/images/gallery/missionary-homecoming-sister-cannon.webp',  'Welcome home missionary return',         'Mission Return — Eagle Mountain'],
+              ['/images/gallery/birthday-1st-palmer.webp',                  '1st birthday yard card setup',           '1st Birthday — Eagle Mountain'],
+              ['/images/gallery/graduation-brinley.webp',                   'Congrats Grad Brinley yard card',        'Graduation — Eagle Mountain, 2026'],
+              ['/images/gallery/retirement-amy.webp',                       'Happily Retired yard card display',      'Retirement — Eagle Mountain'],
             ].map(([src, alt, label]) => (
               <div key={src} className="gallery-preview-item reveal">
-                <img src={src} alt={alt} width="500" height="400" loading="lazy" />
+                <img src={src} alt={alt} width="900" height="600" loading="lazy" />
                 <div className="gallery-preview-overlay"><span className="gallery-preview-label">{label}</span></div>
               </div>
             ))}

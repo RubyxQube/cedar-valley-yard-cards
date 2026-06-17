@@ -5,6 +5,7 @@ import siteConfig from '../siteConfig';
 const links = [
   { to: '/occasions', label: 'Occasions' },
   { to: '/gallery',   label: 'Gallery' },
+  { to: '/pricing',   label: 'Pricing' },
   { to: '/ideas',     label: 'Ideas' },
   { to: '/about',     label: 'About' },
 ];

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SparklesCanvas from '../components/SparklesCanvas';
 import { usePageMeta } from '../hooks/usePageMeta';
@@ -46,7 +46,26 @@ export default function Gallery() {
   );
 
   const [active, setActive] = useState('all');
+  const [lb, setLb] = useState(null);
   const visible = ITEMS.filter(i => active === 'all' || i.cat === active);
+
+  useEffect(() => { setLb(null); }, [active]);
+
+  useEffect(() => {
+    if (lb === null) return;
+    function onKey(e) {
+      if (e.key === 'Escape') setLb(null);
+      if (e.key === 'ArrowLeft') setLb(i => (i - 1 + visible.length) % visible.length);
+      if (e.key === 'ArrowRight') setLb(i => (i + 1) % visible.length);
+    }
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [lb, visible.length]);
+
+  useEffect(() => {
+    document.body.style.overflow = lb !== null ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [lb]);
 
   return (
     <>
@@ -75,8 +94,8 @@ export default function Gallery() {
             ))}
           </div>
           <div className="gallery-masonry">
-            {visible.map((item) => (
-              <div key={item.src} className="gallery-item" data-cat={item.cat}>
+            {visible.map((item, idx) => (
+              <div key={item.src} className="gallery-item" data-cat={item.cat} onClick={() => setLb(idx)} style={{ cursor: 'zoom-in' }}>
                 <img src={item.src} alt={item.alt} width={item.w} height={item.h} loading="lazy" />
                 <div className="gallery-overlay"><span className="gallery-label">{item.label}</span></div>
               </div>
@@ -97,6 +116,18 @@ export default function Gallery() {
           </div>
         </div>
       </section>
+
+      {lb !== null && (
+        <div className="lightbox" onClick={() => setLb(null)}>
+          <button className="lightbox-close" onClick={() => setLb(null)} aria-label="Close">&#x2715;</button>
+          <button className="lightbox-prev" onClick={e => { e.stopPropagation(); setLb(i => (i - 1 + visible.length) % visible.length); }} aria-label="Previous">&#8249;</button>
+          <div className="lightbox-img-wrap" onClick={e => e.stopPropagation()}>
+            <img src={visible[lb].src} alt={visible[lb].alt} />
+            <p className="lightbox-caption">{visible[lb].label}</p>
+          </div>
+          <button className="lightbox-next" onClick={e => { e.stopPropagation(); setLb(i => (i + 1) % visible.length); }} aria-label="Next">&#8250;</button>
+        </div>
+      )}
     </>
   );
 }

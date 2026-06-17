@@ -6,6 +6,7 @@ import Occasions from './pages/Occasions';
 import Gallery from './pages/Gallery';
 import Ideas from './pages/Ideas';
 import Booking from './pages/Booking';
+import Pricing from './pages/Pricing';
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
           <Route path="/occasions" element={<Occasions />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/ideas" element={<Ideas />} />
+          <Route path="/pricing" element={<Pricing />} />
           <Route path="/booking" element={<Booking />} />
         </Routes>
       </Layout>

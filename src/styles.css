@@ -568,6 +568,16 @@ nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rota
 .gallery-cta-right h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px, 3vw, 38px); font-weight: 700; color: #fff; margin-bottom: 24px; }
 @media (max-width: 719px) { .gallery-cta-inner { grid-template-columns: 1fr; gap: 32px; } }
 
+/* ── Lightbox ── */
+.lightbox { position: fixed; inset: 0; z-index: 2000; background: rgba(0,0,0,0.92); display: flex; align-items: center; justify-content: center; padding: 20px; }
+.lightbox-img-wrap { max-width: 90vw; max-height: 90vh; display: flex; flex-direction: column; align-items: center; }
+.lightbox-img-wrap img { max-width: 100%; max-height: 85vh; object-fit: contain; border-radius: 8px; display: block; }
+.lightbox-caption { color: rgba(255,255,255,0.7); font-size: 13px; margin-top: 12px; text-align: center; font-family: 'Mulish', sans-serif; }
+.lightbox-close { position: fixed; top: 20px; right: 24px; background: none; border: none; color: #fff; font-size: 36px; cursor: pointer; z-index: 2001; line-height: 1; }
+.lightbox-prev, .lightbox-next { background: none; border: none; color: #fff; font-size: 60px; cursor: pointer; padding: 0 20px; flex-shrink: 0; line-height: 1; transition: color 0.15s; }
+.lightbox-prev:hover, .lightbox-next:hover { color: var(--teal-lt); }
+@media (max-width: 719px) { .lightbox-prev, .lightbox-next { font-size: 40px; padding: 0 10px; } }
+
 /* ═══════════════════════════════════════════════════════════════════════════ */
 /* IDEAS PAGE                                                                  */
 /* ═══════════════════════════════════════════════════════════════════════════ */
@@ -602,6 +612,48 @@ nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rota
 .soft-cta { max-width: 720px; margin: 0 auto; border: 2px solid var(--teal); border-radius: 12px; padding: 32px 36px; text-align: center; }
 .soft-cta p { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--text); margin-bottom: 16px; }
 .soft-cta a { color: var(--teal); font-weight: 700; font-size: 15px; }
+
+/* ═══════════════════════════════════════════════════════════════════════════ */
+/* PRICING PAGE                                                                */
+/* ═══════════════════════════════════════════════════════════════════════════ */
+
+.pricing-section { padding: 80px 5vw; background: var(--bg); }
+.pricing-inner { max-width: 860px; margin: 0 auto; }
+
+.pricing-card-primary { background: #fff; border: 2px solid var(--teal); border-radius: 20px; overflow: hidden; box-shadow: 0 4px 32px rgba(10,147,150,0.12); margin-bottom: 60px; }
+.pricing-card-header { background: var(--teal); padding: 48px 48px 40px; text-align: center; }
+.pricing-eyebrow { display: block; font-family: 'Mulish', sans-serif; font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.75); margin-bottom: 16px; }
+.pricing-price { display: flex; align-items: flex-start; justify-content: center; gap: 4px; margin-bottom: 12px; }
+.pricing-dollar { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 700; color: rgba(255,255,255,0.8); line-height: 1.1; margin-top: 10px; }
+.pricing-amount { font-family: 'Cormorant Garamond', serif; font-size: 96px; font-weight: 700; color: #fff; line-height: 1; }
+.pricing-tagline { font-family: 'Mulish', sans-serif; font-size: 15px; color: rgba(255,255,255,0.85); margin: 0; }
+
+.pricing-card-body { padding: 40px 48px 48px; }
+.pricing-includes { list-style: none; padding: 0; margin: 0 0 36px; display: flex; flex-direction: column; gap: 16px; }
+.pricing-includes li { display: flex; align-items: flex-start; gap: 12px; font-family: 'Mulish', sans-serif; font-size: 15px; color: var(--text); line-height: 1.5; }
+.pricing-cta-btn { width: 100%; justify-content: center; display: flex; align-items: center; gap: 8px; font-size: 16px; padding: 16px 24px; }
+
+.pricing-addons h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px, 3.5vw, 38px); font-weight: 700; color: var(--text); margin-bottom: 28px; }
+.pricing-addon-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.pricing-addon-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+.pricing-addon-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+.pricing-addon-label { font-family: 'Mulish', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); }
+.pricing-addon-amount { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--teal); white-space: nowrap; }
+.pricing-addon-desc { font-family: 'Mulish', sans-serif; font-size: 13px; color: var(--text-muted); line-height: 1.5; margin: 0; }
+
+.pricing-faq { padding: 80px 5vw; background: var(--blush); }
+.pricing-faq-inner { max-width: 860px; margin: 0 auto; }
+.pricing-faq h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 700; color: var(--text); margin-bottom: 40px; }
+.pricing-faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.pricing-faq-item h3 { font-family: 'Mulish', sans-serif; font-size: 15px; font-weight: 800; color: var(--text); margin-bottom: 10px; }
+.pricing-faq-item p { font-family: 'Mulish', sans-serif; font-size: 14px; color: var(--text-muted); line-height: 1.7; margin: 0; }
+
+@media (max-width: 719px) {
+  .pricing-card-header { padding: 36px 24px 28px; }
+  .pricing-card-body { padding: 28px 24px 36px; }
+  .pricing-addon-grid { grid-template-columns: 1fr; }
+  .pricing-faq-grid { grid-template-columns: 1fr; }
+}
 
 /* ═══════════════════════════════════════════════════════════════════════════ */
 /* BOOKING PAGE                                                                */
