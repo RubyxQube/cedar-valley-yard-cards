@@ -27,7 +27,7 @@ export default function Pricing() {
         <SparklesCanvas density={140} />
         <div className="hero-content inner-hero-content">
           <span className="eyebrow">Simple Pricing</span>
-          <h1>Flat Rate. No Surprises.</h1>
+          <h1>Flat Rate.<br />No Surprises.</h1>
           <p>Everything included — delivery, setup, full-day display, and teardown.</p>
         </div>
       </section>
