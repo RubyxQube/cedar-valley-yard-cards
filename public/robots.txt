@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cedar-valley-yard-cards.vercel.app/sitemap.xml

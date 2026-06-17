@@ -61,7 +61,7 @@ export default function Ideas() {
         <div className="article-col reveal" id="article-1">
           <span className="article-tag">Planning</span>
           <h2>How to Pull Off a Yard Card Surprise (Without Them Knowing)</h2>
-          <img src="https://placehold.co/720x405/fce8ef/c03a5f?text=Planning+Guide" alt="Planning a yard card surprise" className="article-img" width="720" height="405" loading="lazy" />
+          <img src="/images/gallery/birthday-robby-jo.webp" alt="Planning a yard card surprise" className="article-img" width="720" height="405" loading="lazy" />
           <div className="article-body-text">
             <p>The best yard card surprises share one thing in common: the person had absolutely no idea. Here's how families in Eagle Mountain pull it off every time without letting anything slip.</p>
             <h3>Start with the address, not the occasion</h3>
@@ -79,7 +79,7 @@ export default function Ideas() {
         <div className="article-col reveal" id="article-2">
           <span className="article-tag">Graduations</span>
           <h2>Graduation Yard Card Ideas for Eagle Mountain Seniors</h2>
-          <img src="https://placehold.co/720x405/9a2d4a/fce8ef?text=Graduation+Season+Guide" alt="Graduation yard card display ideas" className="article-img" width="720" height="405" loading="lazy" />
+          <img src="/images/gallery/graduation-brinley.webp" alt="Graduation yard card display ideas" className="article-img" width="720" height="405" loading="lazy" />
           <div className="article-body-text">
             <p>Graduation season in Eagle Mountain and Lehi is our busiest time of year - and for good reason. There are few moments in a teenager's life that feel as significant as finishing high school.</p>
             <h3>Book as early as February or March</h3>
@@ -95,7 +95,7 @@ export default function Ideas() {
         <div className="article-col reveal" id="article-3">
           <span className="article-tag">Welcome Home</span>
           <h2>Missionary Return Yard Cards: Making the Welcome Home Unforgettable</h2>
-          <img src="https://placehold.co/720x405/3a9ab8/ffffff?text=Missionary+Return+Guide" alt="Welcome home missionary return yard card guide" className="article-img" width="720" height="405" loading="lazy" />
+          <img src="/images/gallery/missionary-homecoming-sister-cannon.webp" alt="Welcome home missionary return yard card guide" className="article-img" width="720" height="405" loading="lazy" />
           <div className="article-body-text">
             <p>In Eagle Mountain and throughout Utah County, a missionary return is one of the most significant homecoming moments a family experiences. Two years of anticipation. The yard display should match that moment.</p>
             <h3>Start with the mission name</h3>
@@ -113,7 +113,7 @@ export default function Ideas() {
         <div className="article-col reveal" id="article-4">
           <span className="article-tag">Birthdays</span>
           <h2>Milestone Birthday Displays: 16, 30, 40, 50, 60, and Beyond</h2>
-          <img src="https://placehold.co/720x405/c03a5f/ffffff?text=Milestone+Birthday+Guide" alt="Milestone birthday yard card display ideas" className="article-img" width="720" height="405" loading="lazy" />
+          <img src="/images/gallery/birthday-40-tanner.webp" alt="Milestone birthday yard card display ideas" className="article-img" width="720" height="405" loading="lazy" />
           <div className="article-body-text">
             <p>Some birthdays feel different. Not just older - more significant. A 16th, a 30th, a 50th. A yard card display doesn't just celebrate the number - it says "we see how significant this is."</p>
             <h3>Sweet 16</h3>

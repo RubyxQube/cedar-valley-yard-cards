@@ -7,6 +7,7 @@ import Gallery from './pages/Gallery';
 import Ideas from './pages/Ideas';
 import Booking from './pages/Booking';
 import Pricing from './pages/Pricing';
+import NotFound from './pages/NotFound';
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/ideas" element={<Ideas />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/booking" element={<Booking />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
     </BrowserRouter>

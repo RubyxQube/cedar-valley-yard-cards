@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import siteConfig from '../siteConfig';
 
@@ -15,6 +15,12 @@ export default function Navbar() {
   const { pathname } = useLocation();
 
   function close() { setOpen(false); }
+
+  useEffect(() => {
+    function onKey(e) { if (e.key === 'Escape') setOpen(false); }
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
 
   return (
     <nav className={open ? 'nav-open' : ''} id="mainNav">
