@@ -199,10 +199,10 @@ export default function Home() {
               ['/images/gallery/graduation-brinley.webp',                   'Congrats Grad Brinley yard card',        'Graduation — Eagle Mountain, 2026'],
               ['/images/gallery/retirement-amy.webp',                       'Happily Retired yard card display',      'Retirement — Eagle Mountain'],
             ].map(([src, alt, label]) => (
-              <div key={src} className="gallery-preview-item reveal">
+              <Link key={src} to="/gallery" className="gallery-preview-item reveal">
                 <img src={src} alt={alt} width="900" height="600" loading="lazy" />
                 <div className="gallery-preview-overlay"><span className="gallery-preview-label">{label}</span></div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
