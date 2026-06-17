@@ -390,7 +390,7 @@ nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rota
 /* ═══════════════════════════════════════════════════════════════════════════ */
 
 .home-hero {
-  height: 100vh; min-height: 600px;
+  height: 85vh; min-height: 600px;
   display: flex; flex-direction: column; justify-content: flex-end;
   background: radial-gradient(ellipse at 30% 40%, #0d5c70 0%, #083040 35%, #04141a 65%, #020d12 100%);
 }
@@ -866,12 +866,10 @@ nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rota
   gap: 12px;
   flex-shrink: 0;
 }
-.chat-header-name {
-  font-family: 'Mulish', sans-serif;
-  font-size: 14px;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: 0.01em;
+.chat-header-logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
 }
 .chat-close {
   background: none;
