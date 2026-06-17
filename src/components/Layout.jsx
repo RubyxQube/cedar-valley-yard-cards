@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import DemoBanner from './DemoBanner';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { useReveal } from '../hooks/useReveal';
@@ -26,7 +25,6 @@ function useHashScroll() {
 
 export default function Layout({ children }) {
   const { pathname } = useLocation();
-  const isHome = pathname === '/';
 
   useHashScroll();
 
@@ -34,9 +32,8 @@ export default function Layout({ children }) {
 
   return (
     <>
-      {isHome && <DemoBanner />}
       <Navbar />
-      <div className={isHome ? '' : 'page-wrap'}>
+      <div className={pathname === '/' ? '' : 'page-wrap'}>
         {children}
         <Footer />
       </div>

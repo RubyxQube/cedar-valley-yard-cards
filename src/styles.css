@@ -414,6 +414,10 @@ nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rota
 .occasion-strip { background: var(--blush); padding: 48px 5vw; }
 .occasion-strip-inner { max-width: 900px; margin: 0 auto; display: flex; gap: 12px; justify-content: space-between; flex-wrap: wrap; }
 .occasion-item { display: flex; flex-direction: column; align-items: center; gap: 10px; text-decoration: none; flex: 1; min-width: 80px; text-align: center; transition: transform 0.2s; }
+@media (max-width: 600px) {
+  .occasion-strip-inner { justify-content: center; gap: 16px 8px; }
+  .occasion-item { flex: 0 0 calc(33.33% - 8px); min-width: unset; }
+}
 .occasion-item:hover { transform: translateY(-3px); }
 .occasion-icon { width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; background: #fff; border-radius: 50%; box-shadow: 0 2px 12px rgba(10,147,150,0.12); }
 .occasion-icon svg { width: 26px; height: 26px; color: var(--teal); }
